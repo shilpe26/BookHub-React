@@ -1,0 +1,107 @@
+@media (max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    html {
+        scroll-padding-top: 0;
+    }
+
+    body {
+        padding-bottom: 6rem;
+    }
+
+    .bottom-navbar {
+        display: block;
+    }
+
+    .icons #search-btn {
+        display: block;
+    }
+
+    .search-form {
+        position: absolute;
+        top: -115%;
+        right: 2rem;
+        width: 90%;
+        box-shadow: var(--box-shadow);
+    }
+
+    .header .header-bookhub {
+        box-shadow: var(--box-shadow);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-form.active {
+        top: 115%;
+        width: 92%;
+    }
+
+    .content_for-bookhub {
+        text-align: center;
+    }
+
+    .style-head {
+        font-size: 3.5rem;
+    }
+
+    .icons-container {
+        margin-left: 7rem;
+    }
+
+    .deal-image {
+        margin-left: 10rem;
+    }
+
+
+    /* Filter section */
+    .invisible {
+        display: none;
+    }
+
+    section.filter-drawer {
+        position: absolute;
+        width: 60%;
+        z-index: 9;
+    }
+
+    main.bookhub-container {
+        grid-template-columns: 100%;
+        margin-top: -3rem;
+    }
+
+    div.filter_btn-book {
+        display: block;
+    }
+
+    main.cart-bookhub {
+        margin-top: 0rem;
+    }
+
+    .cart-book {
+        display: flex;
+    }
+
+    .cart-bookhub .cart-1 {
+        width: 90%;
+    }
+    div.main-style{
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width:450px) {
+
+    html {
+        font-size: 50%;
+    }
+
+}
