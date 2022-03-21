@@ -1,8 +1,9 @@
 import {React, useEffect, useState} from 'react';
 import axios from 'axios';
 import BackgroundIamge from "../../assets/background-image.png";
-import "../../../src/App.css";
+import "../../App.css";
 import {Link} from "react-router-dom";
+
 function Home() {
     const [category, setCategory] = useState([]);
 
