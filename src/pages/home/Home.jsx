@@ -35,7 +35,7 @@ function Home() {
 
             <div className="books-slider">
                 <div>
-                    <img src={BackgroundIamge} className="style-image" alt=""/>
+                    <img src={BackgroundIamge} className="style-image" alt="backgroundImage"/>
                 </div>
             </div>
         </div>
@@ -74,13 +74,20 @@ function Home() {
             </div>
         </div>
     </section>
-    <section className="categories">
+
+    <h1 className="heading"> <span>Categories</span> </h1>
+    <section className="cards_for-book">
     <div>{category.map(item => (
-      <div className='categoryImg' key={item.id}>
-          <img src={item.categoryImage} alt="category-img"/>
-          <h2>{item.categoryName}</h2>
+      <div key={item.id}>
+          <div className="card-vertical flex-items">
+     <div className="image-container badge-container">
+         	<img className="img-responsive card-img" src={item.categoryImage} alt=""/>
+     </div>
+     <div className="text-container">
+          <h4 className="heading-primary">{item.categoryName}</h4>
+       </div>
+</div>
       </div>
-      
 ))}</div>
     </section>
 
