@@ -73,7 +73,7 @@
         z-index: 9;
     }
 
-    main.bookhub-container {
+    div.bookhub-container {
         grid-template-columns: 100%;
         margin-top: -3rem;
     }
@@ -82,7 +82,7 @@
         display: block;
     }
 
-    main.cart-bookhub {
+    div.cart-bookhub {
         margin-top: 0rem;
     }
 

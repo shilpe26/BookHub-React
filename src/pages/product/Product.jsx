@@ -1,8 +1,16 @@
-import React from 'react'
+import {React,useState} from 'react'
+import { Drawer } from './drawer/Drawer';
+import "../../App.css";
+import { Card } from './card/Card';
 
 function Product() {
+  const [drawerVisible, setDrawerVisible] = useState(false);
+
   return (
-    <div>Product</div>
+    <div className="bookhub-container">
+      <Drawer drawerVisible={drawerVisible}/>
+      <Card drawerVisible={drawerVisible} setDrawerVisible={setDrawerVisible}/>
+    </div>
   )
 }
 
