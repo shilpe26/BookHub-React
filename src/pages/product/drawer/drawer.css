@@ -7,6 +7,10 @@
 .filter-drawer {
     border-right: var(--border);
     background-color: var(--white-hover);
+    position: sticky;
+    top: 8rem;
+    height: 90vh;
+    overflow: auto;
 }
 
 .filter {
