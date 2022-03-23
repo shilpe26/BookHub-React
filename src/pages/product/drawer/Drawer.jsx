@@ -1,12 +1,20 @@
-import {React} from 'react'
+import {React, useState, useEffect} from 'react'
 import "../../../App.css";
 import {useProduct} from "../../filters/Product-context";
 
 function Drawer({drawerVisible}) {
 
+// hiding drawer on small screen size
+const [width, setWidth] = useState(window.innerWidth);
+useEffect(() => {
+  const handleWindowResize = () => setWidth(window.innerWidth);
+  window.addEventListener("resize", handleWindowResize);
+  return () => window.removeEventListener("resize", handleWindowResize);
+}, []);
+
     const {state, dispatch} = useProduct();
-  return (
-        <section style={{display: drawerVisible ? "none" : "block"}} className="filter-drawer">
+    return (
+        <section style={{display: (width <= 800 && drawerVisible)  ? 'none' : 'block'}} className="filter-drawer">
             <div className="filter-header">
                 <h3>Filters</h3>
                 <button onClick={()=>dispatch({type: "CLEAR"})} className="btn">Clear</button>
