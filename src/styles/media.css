@@ -61,7 +61,10 @@
         margin-left: 10rem;
     }
 
-
+    .card-vertical{
+        position: relative;
+        top: 0.9%;
+    }
     /* Filter section */
     .invisible {
         display: none;
