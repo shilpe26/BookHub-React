@@ -25,6 +25,7 @@
 }
 .card-vertical{
     position: relative;
+    top: -0.5%;
 }
 .overlay-text{
     background-color: rgba(0,0,0,0.4);
@@ -32,7 +33,7 @@
     height: 100%;
     position: absolute;
     left: 0;
-    top: -41%;
+    top: -40%;
     color: white;
     border-radius: 4px;
     font-size: 1.7rem;
