@@ -34,7 +34,7 @@
 
     .header .header-bookhub {
         box-shadow: var(--box-shadow);
-        position: relative;
+        position: fixed;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -68,9 +68,12 @@
     }
 
     section.filter-drawer {
-        position: absolute;
+        position: fixed;
         width: 60%;
+        height: 90vh;
+        overflow: auto;
         z-index: 9;
+        top: 14%;
     }
 
     div.bookhub-container {
