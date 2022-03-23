@@ -1,12 +1,30 @@
-import React from 'react';
+import {React,useState, useEffect} from 'react';
+import axios from "axios";
+
 import "../../../App.css";
 import {useProduct} from "../../filters/Product-context";
 function Card({drawerVisible, setDrawerVisible}) {
+
    const {filteredProducts} = useProduct();
+
+    const [products, setProducts] = useState([]);
+    
+    useEffect(() => {
+        (async () => {
+            try {
+                const response = await axios.get('/api/products');
+                setProducts(response.data.products);
+              } catch (error) {
+                console.error(error);
+              }
+        })();
+    },[]);
+
 
   return (
     
         <section className="cards_for-book">
+
             {filteredProducts.length === 0 ? <h3>Products Loading...</h3> : 
             filteredProducts.map(({_id,
                 title,
@@ -21,6 +39,7 @@ function Card({drawerVisible, setDrawerVisible}) {
                 <div className="image-container badge-container">
                     <img className="img-responsive card-img" src={productImage} alt="fiction_books"/>
                     <span className="badge bg-primary">#1Bestseller</span>
+
                 </div>
                 <div className="text-container">
                     <h3 className="price-tag">${price}</h3>
@@ -43,6 +62,7 @@ function Card({drawerVisible, setDrawerVisible}) {
                     {drawerVisible ? <i className="fas fa-filter"></i> : <i className="fas fa-xmark"></i> }
                     </button>
             </div>
+            
         </section>
   )
 }
