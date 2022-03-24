@@ -117,6 +117,9 @@
     color: var(--black);
     font-size: 4rem;
 }
+.heading{
+    margin-bottom: 5rem;
+}
 
 .deal-desc {
     padding: 1rem 0;

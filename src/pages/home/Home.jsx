@@ -76,21 +76,20 @@ function Home() {
     </section>
 
     <h1 className="heading"> <span>Categories</span> </h1>
-    <div className="cards_for-wish">
-    <section className="cards_for-book">
-    <div>{category.map(item => (
-      <div key={item._id}>
-          <div className="card-vertical flex-items">
-     <div className="image-container badge-container">
-         	<img className="img-responsive card-img" src={item.categoryImage} alt=""/>
-     </div>
-     <div className="text-container">
-          <h4 className="heading-primary">{item.categoryName}</h4>
-       </div>
-</div>
-      </div>
-))}</div>
-    </section></div>
+    <section className="cards_for-book cards_for-wish">
+    {category.map(item => (
+    <div key={item._id}>
+        <div className="card-vertical flex-items">
+            <div className="image-container badge-container">
+         	    <img className="img-responsive card-img" src={item.categoryImage} alt=""/>
+            </div>
+            <div className="text-container">
+                <h4 className="heading-primary">{item.categoryName}</h4>
+            </div>
+        </div>
+    </div>
+))}
+    </section>
 
     <section className="deal">
         <div className="deal-content">

@@ -1,0 +1,27 @@
+.first{
+    margin-top: 12rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-size: 4rem;
+    }
+    .button-close-wishlist {
+        cursor: pointer;
+        height: 3rem;
+        width: 3rem;
+        margin-left: 18rem;
+    }
+    .cards_for-wish{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 2rem;
+    padding: 2rem;
+    }
+    .cards_for-book{
+    margin-top: -4rem;
+    }
+    .bg-wishlist{
+        background-color: #B2DEFF;
+        border-radius: 4px;
+    }
