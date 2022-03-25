@@ -41,6 +41,7 @@ function Home() {
         </div>
     </section>
 
+    <h1 className="heading"> <span>Features</span> </h1>
     <section className="icons-container">
         <div className="icons">
             <i className="fas fa-shipping-fast icons_for-bookhub"></i>
