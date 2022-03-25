@@ -1,6 +1,10 @@
 import React from 'react'
 import { useWishlist } from '../../wishlist/wishlist-context';
 import "../../../App.css";
+const ACTIONS = {
+  ADDTOWISHLIST : "add-to-wishlist", 
+  REMOVEFROMWISHLIST : "remove-from-wishlist"
+}
 function ProductCard({
     _id,
     title,
@@ -16,7 +20,7 @@ function ProductCard({
 
     const {wishlist_dispatch} = useWishlist();
     function wishListHandler(){
-      wishlist_dispatch({type:"ADD-TO-WISHLIST", 
+      wishlist_dispatch({type: ACTIONS.ADDTOWISHLIST, 
       payload:{_id,title,author,inStock,rating,isFastDelivery,categoryName,productImage, price}});
     }
   return (

@@ -1,6 +1,10 @@
+const ACTIONS = {
+    ADDTOWISHLIST : "add-to-wishlist", 
+    REMOVEFROMWISHLIST : "remove-from-wishlist"
+  }
 export const reducer = (wishlist_state, action) => {
     switch(action.type){
-        case ("ADD-TO-WISHLIST"):
+        case ACTIONS.ADDTOWISHLIST:
             if(wishlist_state.items.filter(item => item._id === action.payload._id).length !== 0){ 
              return {...wishlist_state, msg: "Product is already in your wishlist!"}
             }else{
@@ -8,7 +12,7 @@ export const reducer = (wishlist_state, action) => {
             quantity: wishlist_state.quantity + 1, 
             items: [...wishlist_state.items, action.payload]}
             }
-        case ("REMOVE-FROM-WISHLIST"):
+        case ACTIONS.REMOVEFROMWISHLIST:
             return {...wishlist_state, quantity: wishlist_state.quantity - 1, 
                 items: wishlist_state.items.filter(item => item._id !== action.payload)}
         default: return wishlist_state
