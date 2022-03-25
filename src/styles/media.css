@@ -61,10 +61,20 @@
         margin-left: 10rem;
     }
 
-    div.card-vertical{
-        position: relative;
-        top: 1%;
+    .first {
+        top: 6rem;
+        position: absolute;
+        right: 20rem;
     }
+
+    .cards_for-wish {
+        margin-top: 22rem;
+    }
+
+    .bg-wishlist {
+        margin-top: -2rem;
+    }
+
     /* Filter section */
     .invisible {
         display: none;
@@ -99,7 +109,8 @@
     .cart-bookhub .cart-1 {
         width: 90%;
     }
-    div.main-style{
+
+    div.main-style {
         margin-top: 4rem;
     }
 }

@@ -11,9 +11,9 @@ function Navbar() {
 
     <header className="header">
         <div className="header-bookhub">
-            <a href="./index.html" className="logo"><img src={Logo} alt="icon-logo" />BoOkHuB</a>
+            <Link to="/" className="logo"><img src={Logo} alt="icon-logo" />BoOkHuB</Link>
             <form action="" className="search-form">
-                <input type="search" name="" placeholder="Find your next favorite book" className="input-bookhub"
+                <input type="search" placeholder="Find your next favorite book" className="input-bookhub"
                     id="search-box" />
                 <label htmlFor="search-box" className="fas fa-search search-icon"></label>
             </form>
@@ -22,9 +22,9 @@ function Navbar() {
                 <Link to="/wishlist" className="fas fa-heart header-icons">
                     <div className="badge-icon">{wishlist_state.quantity}</div>
                 </Link>
-                <a href="./components/cart.html" className="fas fa-shopping-cart header-icons">
+                <Link to="/cart" className="fas fa-shopping-cart header-icons">
                     <div className="badge-icon">0</div>
-                </a>
+                </Link>
                 <Link to="/login" id="login-btn" className="login-btn-bookhub">Login</Link>
                 <Link to="/signup" id="signUp-btn" className="signUp-btn-bookhub">Sign up</Link>
             </div>
