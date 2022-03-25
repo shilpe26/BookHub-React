@@ -1,6 +1,7 @@
 import React from 'react'
 import { useWishlist } from '../../wishlist/wishlist-context';
 import "../../../App.css";
+
 const ACTIONS = {
   ADDTOWISHLIST : "add-to-wishlist", 
   REMOVEFROMWISHLIST : "remove-from-wishlist"
@@ -17,7 +18,6 @@ function ProductCard({
     categoryName
 })
  {
-
     const {wishlist_dispatch} = useWishlist();
     function wishListHandler(){
       wishlist_dispatch({type: ACTIONS.ADDTOWISHLIST, 
@@ -35,7 +35,7 @@ function ProductCard({
                     <p className="sub-heading">by {author}</p>
                     <h3 className="price-tag">{rating}⭐</h3>
                     <div className="buttons">
-                        <button onClick={wishListHandler} value="wishlist" type="button">Add to Wishlist</button>
+                        <button onClick={wishListHandler} value="wishlist" type="button"><i className="fas fa-heart"></i>Wishlist</button>
                         <button type="button">Add to Cart</button>
                     </div>
                 </div>
