@@ -6,22 +6,13 @@ const ACTIONS = {
   ADD_TO_WISHLIST : "add-to-wishlist", 
   REMOVE_FROM_WISHLIST : "remove-from-wishlist"
 }
-function ProductCard({
-    _id,
-    title,
-    author,
-    price,
-    inStock,
-    rating,
-    productImage,
-    isFastDelivery,
-    categoryName
-})
+function ProductCard({ element })
  {
+   const {_id,title,author,inStock,rating,isFastDelivery,categoryName,productImage, price} = element;
     const {wishlist_dispatch} = useWishlist();
     function wishListHandler(){
       wishlist_dispatch({type: ACTIONS.ADD_TO_WISHLIST, 
-      payload:{_id,title,author,inStock,rating,isFastDelivery,categoryName,productImage, price}});
+      payload:{ element }});
     }
   return (
     <div className="card-vertical flex-items">
