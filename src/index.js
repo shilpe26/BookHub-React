@@ -12,11 +12,11 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-    <ProductProvider>
-    <WhishlistProvider >
-    <App />
-    </WhishlistProvider>
-    </ProductProvider>
+      <ProductProvider>
+        <WhishlistProvider >
+          <App />
+        </WhishlistProvider>
+      </ProductProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

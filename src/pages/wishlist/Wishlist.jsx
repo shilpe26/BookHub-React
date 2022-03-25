@@ -3,8 +3,8 @@ import {useWishlist} from "./wishlist-context";
 import { Link } from "react-router-dom";
 import "../../App.css";
 const ACTIONS = {
-    ADDTOWISHLIST : "add-to-wishlist", 
-    REMOVEFROMWISHLIST : "remove-from-wishlist"
+    ADD_TO_WISHLIST : "add-to-wishlist", 
+    REMOVE_FROM_WISHLIST : "remove-from-wishlist"
 }
 function Wishlist() {
   const {wishlist_state, wishlist_dispatch} = useWishlist();
@@ -34,7 +34,7 @@ function Wishlist() {
     wishlist_state.items.map((item) => <div key={item._id}>
     <section className="cards_for-book">
         <div className="card-vertical flex-items">
-            <button onClick={() => wishlist_dispatch({type: ACTIONS.REMOVEFROMWISHLIST, 
+            <button onClick={() => wishlist_dispatch({type: ACTIONS.REMOVE_FROM_WISHLIST, 
             payload: item._id})} 
             className="button-close-wishlist">X</button>
             <div className="image-container badge-container">

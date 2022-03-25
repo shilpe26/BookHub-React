@@ -3,8 +3,8 @@ import { useWishlist } from '../../wishlist/wishlist-context';
 import "../../../App.css";
 
 const ACTIONS = {
-  ADDTOWISHLIST : "add-to-wishlist", 
-  REMOVEFROMWISHLIST : "remove-from-wishlist"
+  ADD_TO_WISHLIST : "add-to-wishlist", 
+  REMOVE_FROM_WISHLIST : "remove-from-wishlist"
 }
 function ProductCard({
     _id,
@@ -20,7 +20,7 @@ function ProductCard({
  {
     const {wishlist_dispatch} = useWishlist();
     function wishListHandler(){
-      wishlist_dispatch({type: ACTIONS.ADDTOWISHLIST, 
+      wishlist_dispatch({type: ACTIONS.ADD_TO_WISHLIST, 
       payload:{_id,title,author,inStock,rating,isFastDelivery,categoryName,productImage, price}});
     }
   return (
