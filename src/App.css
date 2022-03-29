@@ -12,6 +12,7 @@
 @import url("./pages/product/drawer/drawer.css");
 @import url("./pages/product/card/card.css");
 @import url("./pages/wishlist/wishlist.css");
+@import url("./pages/cart/cart.css");
 
 .App{
     display: flex;
