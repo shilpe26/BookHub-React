@@ -41,12 +41,9 @@ function Signup() {
 					aria-label="true"
 				/>
 				<Link to="/">
-					<input
-						type="submit"
-						value="sign up"
-						className="btn"
-						aria-label="true"
-					/>
+					<button type="submit" value="sign up" className="btn">
+						Signup
+					</button>
 				</Link>
 			</form>
 		</div>

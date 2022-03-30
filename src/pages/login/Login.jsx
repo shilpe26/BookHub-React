@@ -30,7 +30,7 @@ function Login() {
 					don't have an account ?
 					<Link to="/signup">
 						<button type="button" className="btn-warning">
-							create one
+							Create One
 						</button>
 					</Link>
 				</p>
