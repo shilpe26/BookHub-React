@@ -108,10 +108,14 @@
 
     .cart-bookhub .cart-1 {
         width: 90%;
+        margin-top: 25rem;
     }
 
     div.main-style {
         margin-top: 4rem;
+    }
+    .cart-items-fix{
+        margin-top: 25rem;
     }
 }
 

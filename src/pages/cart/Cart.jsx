@@ -1,9 +1,49 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useCart } from "./cart-context";
+import "../../App.css";
+import { Link } from "react-router-dom";
+import { CartPrice } from "./CartPrice";
+import { CartProducts } from "./CartProducts";
 
 function Cart() {
-  return (
-    <div>Cart</div>
-  )
+	const { cart_state } = useCart();
+
+	return (
+		<div>
+			<h2 className="first">Cart({cart_state.quantity})</h2>
+			<div>
+				{cart_state.quantity === 0 ? (
+					<section className="cards_for-book">
+						<div className="card-vertical flex-items bg-wishlist">
+							<div className="image-container badge-container">
+								<img
+									src={require("../../assets/AddtoCart.png")}
+									className="img-responsive card-img"
+									alt="wishlist-img"
+								/>
+							</div>
+							<div className="text-container">
+								<h3 className="price-tag">Hey, it feels so light!</h3>
+								<h4 className="heading-primary">
+									There is nothing in your bag. Let's add some items.
+								</h4>
+								<div className="buttons">
+									<button>
+										<Link to="/product">START SHOPPING</Link>
+									</button>
+								</div>
+							</div>
+						</div>
+					</section>
+				) : (
+					<div>
+						<CartPrice />
+						<CartProducts />
+					</div>
+				)}
+			</div>
+		</div>
+	);
 }
 
-export {Cart}
+export { Cart };

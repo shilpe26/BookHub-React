@@ -5,6 +5,7 @@
   "dependencies": {
     "dayjs": "^1.11.0",
     "eslintrc-generator": "^1.1.1",
+    "generator-eslint": "^3.0.1",
     "jwt-decode": "^3.1.2",
     "jwt-encode": "^1.0.1",
     "miragejs": "^0.1.43",
@@ -36,5 +37,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.1"
   }
 }

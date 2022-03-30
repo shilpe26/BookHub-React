@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import "../../src/App.css";
 import Logo from "../assets/icon-logo.png";
+import { useCart } from '../pages/cart/cart-context';
 import {useWishlist} from "../pages/wishlist/wishlist-context"
 
 function Navbar() {
-    const {wishlist_state} = useWishlist()
+    const {wishlist_state} = useWishlist();
+    const {cart_state} = useCart();
   return (
     <div>
 
@@ -23,7 +25,7 @@ function Navbar() {
                     <div className="badge-icon">{wishlist_state.quantity}</div>
                 </Link>
                 <Link to="/cart" className="fas fa-shopping-cart header-icons">
-                    <div className="badge-icon">0</div>
+                    <div className="badge-icon">{cart_state.quantity}</div>
                 </Link>
                 <Link to="/login" id="login-btn" className="login-btn-bookhub">Login</Link>
                 <Link to="/signup" id="signUp-btn" className="signUp-btn-bookhub">Sign up</Link>
