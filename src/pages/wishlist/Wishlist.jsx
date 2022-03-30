@@ -2,7 +2,6 @@ import React from "react";
 import { useWishlist } from "./wishlist-context";
 import { useCart } from "../cart/cart-context";
 import { Link } from "react-router-dom";
-import "../../App.css";
 const ACTIONS = {
 	ADD_TO_CART: "add-to-cart",
 	REMOVE_FROM_CART: "remove-from-cart",

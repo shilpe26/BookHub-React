@@ -1,7 +1,6 @@
 import React from "react";
 import { useWishlist } from "../../wishlist/wishlist-context";
 import { useCart } from "../../cart/cart-context";
-import "../../../App.css";
 
 const ACTIONS = {
 	ADD_TO_WISHLIST: "add-to-wishlist",
