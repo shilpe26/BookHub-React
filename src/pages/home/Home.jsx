@@ -1,9 +1,17 @@
 import { React, useEffect, useState } from "react";
 import axios from "axios";
 import BackgroundIamge from "../../assets/background-image.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useProduct } from "../filters/Product-context";
 function Home() {
 	const [category, setCategory] = useState([]);
+	const { dispatch } = useProduct();
+	let navigate = useNavigate();
+
+	function categoryHandler(categoryValue) {
+		dispatch({ type: "CATEGORY", payload: categoryValue });
+		navigate("/product");
+	}
 
 	useEffect(() => {
 		(async () => {
@@ -27,7 +35,6 @@ function Home() {
 							</span>
 						</h3>
 						<p>
-							{" "}
 							<span className="style-description">
 								Read more books
 								<br />
@@ -50,7 +57,6 @@ function Home() {
 			</section>
 
 			<h1 className="heading">
-				{" "}
 				<span>Features</span>{" "}
 			</h1>
 			<section className="icons-container">
@@ -88,18 +94,21 @@ function Home() {
 			</section>
 
 			<h1 className="heading">
-				{" "}
-				<span>Categories</span>{" "}
+				<span>Categories</span>
 			</h1>
 			<section className="cards_for-book cards_for-wish">
 				{category.map((item) => (
-					<div key={item._id}>
+					<div
+						className="category-card-bookub"
+						key={item._id}
+						onClick={() => categoryHandler(item.categoryValue)}
+					>
 						<div className="card-vertical flex-items">
 							<div className="image-container badge-container">
 								<img
 									className="img-responsive card-img"
 									src={item.categoryImage}
-									alt=""
+									alt="category"
 								/>
 							</div>
 							<div className="text-container">

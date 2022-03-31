@@ -117,7 +117,8 @@
     color: var(--black);
     font-size: 4rem;
 }
-.heading{
+
+.heading {
     margin-bottom: 5rem;
     margin-top: 5rem;
 }
@@ -148,4 +149,8 @@
 
 .loader-container img {
     height: 10rem;
+}
+
+.category-card-bookub {
+    cursor: pointer;
 }
