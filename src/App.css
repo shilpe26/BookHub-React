@@ -13,6 +13,7 @@
 @import url("./pages/product/card/card.css");
 @import url("./pages/wishlist/wishlist.css");
 @import url("./pages/cart/cart.css");
+@import url("./pages//page_not_found/notfound.css");
 
 .App{
     display: flex;
@@ -20,6 +21,5 @@
     min-height: 100vh;
 }
 .main-style{
-    /* margin-top: 4rem; */
     flex-grow: 1;
 }

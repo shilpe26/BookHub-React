@@ -3,6 +3,7 @@ import {Routes, Route} from "react-router-dom";
 import { Navbar,Footer } from "./components/Component";
 import {Home, Cart, Product, Wishlist, Login, Signup} from "./pages/Pages";
 import Mockman from "mockman-js";
+import { NotFound } from "./pages/page_not_found/NotFound";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Product" element={<Product/>}></Route>
         <Route path="/wishlist" element={<Wishlist/>}></Route>
         <Route path="/mock" element={<Mockman/>}></Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       </div>
       <div>
