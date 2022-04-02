@@ -3,7 +3,6 @@ import { useCart } from "./cart-context";
 import { Link } from "react-router-dom";
 import { CartPrice } from "./CartPrice";
 import { CartProducts } from "./CartProducts";
-
 function Cart() {
 	const { cart_state } = useCart();
 
@@ -35,7 +34,7 @@ function Cart() {
 						</div>
 					</section>
 				) : (
-					<div>
+					<div className="cart-container">
 						<CartPrice />
 						<CartProducts />
 					</div>

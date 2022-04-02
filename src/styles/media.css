@@ -3,7 +3,6 @@
     html {
         font-size: 55%;
     }
-
 }
 
 @media (max-width:768px) {
@@ -71,6 +70,11 @@
         margin-top: 22rem;
     }
 
+    .cards_for-book {
+        top: 16rem;
+        position: relative;
+    }
+
     .bg-wishlist {
         margin-top: -2rem;
     }
@@ -78,7 +82,11 @@
     .bg-cart {
         margin-top: 22rem;
     }
-
+    .center3 {
+        top: 20rem;
+        bottom: 5rem;
+      }
+    
     /* Filter section */
     .invisible {
         display: none;
@@ -110,9 +118,18 @@
         display: flex;
     }
 
+    .cart-container {
+        display: flex;
+        flex-direction: column;
+        column-gap: 2rem;
+    }
+
     .cart-bookhub .cart-1 {
         width: 90%;
         margin-top: 25rem;
+    }
+    .cart-1{
+        height: 40rem;
     }
 
     div.main-style {

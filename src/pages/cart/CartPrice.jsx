@@ -19,14 +19,14 @@ function CartPrice() {
 	}, [cart_state]);
 
 	return (
-		<div className="center3">
+		<div className="center3 bill-cart">
 			<div className="container3-3">
 				<div className="card">
 					<h1 className="head2-2">PRICE DETAILS</h1>
 					<span className="hr_line-book"></span>
 					<div className="cart-space">
 						<h2 className="head3-2">Price</h2>
-						<h2 className="head3-2">$ {totalPrice}</h2>
+						<h2 className="head3-2">$ {totalPrice.toFixed(2)}</h2>
 					</div>
 
 					<div className="cart-space">
@@ -36,7 +36,7 @@ function CartPrice() {
 					<span className="hr_line-book"></span>
 					<div className="cart-space">
 						<h2 className="head3-2">TOTAL AMOUNT</h2>
-						<h2 className="head3-2">$ {totalPrice}</h2>
+						<h2 className="head3-2">$ {totalPrice.toFixed(2)}</h2>
 					</div>
 					<span className="hr_line-book"></span>
 				</div>
