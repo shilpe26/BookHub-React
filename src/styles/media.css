@@ -70,6 +70,7 @@
         top: 6rem;
         position: absolute;
         right: 20rem;
+        text-align: center;
     }
 
     .cards_for-wish {
@@ -89,7 +90,7 @@
     }
 
     .bg-cart {
-        margin-top: 22rem;
+        margin-top: 4rem;
     }
 
     .center3 {
@@ -137,10 +138,6 @@
     .cart-bookhub .cart-1 {
         width: 90%;
         margin-top: 25rem;
-    }
-
-    .cart-1 {
-        height: 40rem;
     }
 
     div.main-style {
