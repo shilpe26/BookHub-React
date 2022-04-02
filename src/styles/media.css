@@ -57,7 +57,12 @@
     }
 
     .deal-image {
-        margin-left: 10rem;
+        margin-left: 20rem;
+        height: 50vh;
+    }
+
+    .deal {
+        margin-top: 20rem;
     }
 
     .first {
@@ -82,11 +87,12 @@
     .bg-cart {
         margin-top: 22rem;
     }
+
     .center3 {
         top: 20rem;
         bottom: 5rem;
-      }
-    
+    }
+
     /* Filter section */
     .invisible {
         display: none;
@@ -128,7 +134,8 @@
         width: 90%;
         margin-top: 25rem;
     }
-    .cart-1{
+
+    .cart-1 {
         height: 40rem;
     }
 
