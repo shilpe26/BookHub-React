@@ -75,6 +75,10 @@
         margin-top: -2rem;
     }
 
+    .bg-cart {
+        margin-top: 22rem;
+    }
+
     /* Filter section */
     .invisible {
         display: none;
@@ -114,7 +118,8 @@
     div.main-style {
         margin-top: 4rem;
     }
-    .cart-items-fix{
+
+    .cart-items-fix {
         margin-top: 25rem;
     }
 }

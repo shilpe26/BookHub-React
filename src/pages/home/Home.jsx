@@ -57,7 +57,7 @@ function Home() {
 			</section>
 
 			<h1 className="heading">
-				<span>Features</span>{" "}
+				<span>Features</span>
 			</h1>
 			<section className="icons-container">
 				<div className="icons">
@@ -93,7 +93,7 @@ function Home() {
 				</div>
 			</section>
 
-			<h1 className="heading">
+			<h1 className="heading category-head">
 				<span>Categories</span>
 			</h1>
 			<section className="cards_for-book cards_for-wish">

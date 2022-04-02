@@ -11,12 +11,6 @@ section {
     padding: 6rem 6%;
 }
 
-.heading {
-    text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
-}
-
 .heading::before {
     content: '';
     position: absolute;

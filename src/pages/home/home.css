@@ -76,6 +76,7 @@
     align-items: center;
     gap: 1.5rem;
     padding: 2rem 0;
+    cursor: pointer;
 }
 
 .icons_for-bookhub {
@@ -85,7 +86,6 @@
 
 .port-shipping {
     font-size: 2.2rem;
-    color: var(--black);
     padding-bottom: .5rem;
 }
 
@@ -121,6 +121,24 @@
 .heading {
     margin-bottom: 5rem;
     margin-top: 5rem;
+    text-align: center;
+    position: relative;
+}
+
+.category-head {
+    margin-bottom: 12rem;
+    margin-top: 5rem;
+    text-align: center;
+    position: relative;
+}
+
+.card-vertical {
+    transition: all 0.6s ease-in-out;
+}
+
+.card-vertical:hover {
+    box-shadow: var(--bg-color) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
 }
 
 .deal-desc {
@@ -137,7 +155,7 @@
     height: 100%;
     width: 100%;
     z-index: 9;
-    background: #f7f7f7;
+    background-color: var(--off-white);
     display: flex;
     align-items: center;
     justify-content: center;

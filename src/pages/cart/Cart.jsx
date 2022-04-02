@@ -13,11 +13,11 @@ function Cart() {
 			<div>
 				{cart_state.quantity === 0 ? (
 					<section className="cards_for-book">
-						<div className="card-vertical flex-items bg-wishlist">
+						<div className="card-vertical flex-items bg-cart">
 							<div className="image-container badge-container">
 								<img
 									src={require("../../assets/AddtoCart.png")}
-									className="img-responsive card-img"
+									className="img-responsive card-img cart-img"
 									alt="wishlist-img"
 								/>
 							</div>

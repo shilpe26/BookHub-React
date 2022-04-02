@@ -23,7 +23,7 @@ function Wishlist() {
 							<div className="image-container badge-container">
 								<img
 									src={require("../../assets/empty-wishlist.png")}
-									className="img-responsive card-img"
+									className="img-responsive wish-empty-img"
 									alt="wishlist-img"
 								/>
 							</div>
