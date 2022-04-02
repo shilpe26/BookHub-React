@@ -57,9 +57,10 @@
     }
 
     .deal-image {
-        margin-left: 20rem;
+        margin-left: 12rem;
         height: 50vh;
     }
+   
 
     .deal {
         margin-top: 20rem;
@@ -74,9 +75,12 @@
     .cards_for-wish {
         margin-top: 22rem;
     }
-
     .cards_for-book {
-        top: 16rem;
+        top: 22rem;
+        position: relative;
+    }
+    .cards_for-book-category {
+        top: -4rem;
         position: relative;
     }
 

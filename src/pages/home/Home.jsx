@@ -96,7 +96,7 @@ function Home() {
 			<h1 className="heading category-head">
 				<span>Categories</span>
 			</h1>
-			<section className="cards_for-book cards_for-wish">
+			<section className="cards_for-book cards_for-wish cards_for-book-category">
 				{category.map((item) => (
 					<div
 						className="category-card-bookub"
