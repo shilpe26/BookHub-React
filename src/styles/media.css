@@ -49,7 +49,7 @@
     }
 
     .style-head {
-        font-size: 3.5rem;
+        margin-top: 2rem;
     }
 
     .icons-container {
@@ -60,7 +60,7 @@
         margin-left: 12rem;
         height: 50vh;
     }
-   
+
 
     .deal {
         margin-top: 20rem;
@@ -76,10 +76,12 @@
     .cards_for-wish {
         margin-top: 22rem;
     }
+
     .cards_for-book {
         top: 22rem;
         position: relative;
     }
+
     .cards_for-book-category {
         top: -4rem;
         position: relative;
@@ -92,7 +94,8 @@
     .bg-cart {
         margin-top: 4rem;
     }
-    .bill-cart{
+
+    .bill-cart {
         margin-top: 25rem;
     }
 
