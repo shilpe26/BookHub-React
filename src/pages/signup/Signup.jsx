@@ -7,38 +7,38 @@ function Signup() {
 				<h3 className="heading-login">SIGN UP</h3>
 				<input
 					type="email"
-					name=""
+					name="email"
 					className="box"
 					placeholder="Email"
-					aria-label="true"
+					aria-label="email"
 				/>
 				<input
-					type="password"
-					name=""
+					type="text"
+					name="fname"
 					className="box"
 					placeholder="First name"
-					aria-label="true"
+					aria-label="text"
 				/>
 				<input
-					type="password"
-					name=""
+					type="text"
+					name="lname"
 					className="box"
 					placeholder="Last name"
-					aria-label="true"
+					aria-label="text"
 				/>
 				<input
 					type="password"
-					name=""
+					name="password"
 					className="box"
 					placeholder="Password"
-					aria-label="true"
+					aria-label="password"
 				/>
 				<input
 					type="password"
-					name=""
+					name="cpassword"
 					className="box"
 					placeholder="Confirm password"
-					aria-label="true"
+					aria-label="password"
 				/>
 				<Link to="/">
 					<button type="submit" value="sign up" className="btn">
