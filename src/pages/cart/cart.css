@@ -3,7 +3,7 @@
     margin-left: 19rem;
     margin-bottom: 5rem;
 } */
-.bill-cart{
+.bill-cart {
     border-radius: 4px;
     background-color: #fff;
     box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
@@ -17,7 +17,8 @@
     cursor: pointer;
     overflow: hidden;
     /* margin-left: 19rem; */
-  }
+}
+
 .cart-bookhub {
     margin-top: -3rem;
     display: flex;
@@ -38,7 +39,7 @@
 .imag-cart {
     width: 228px;
     height: 228px;
-  }
+}
 
 .head2 {
     font-size: 2.5rem;
@@ -68,30 +69,33 @@
     font-size: 1.5rem;
 }
 
-/* .cart-price-detail {
-    margin-left: 70rem;
-    margin-top: -44rem;
-} */
-
-.buttons button:nth-child(1) {
-    margin-right: 1px;
+.place-order-btn {
+    width: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-left: 10rem;
 }
 
 .cart-1 {
- 
-        width: 43rem;
-        margin-top: 2rem;
-        padding: 1rem;
-        margin-left: 12rem;
-        margin-right: 13rem;
-        height: 30rem;
+
+    width: 43rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    margin-left: 12rem;
+    margin-right: 13rem;
+    height: 30rem;
 }
-.center3{
+
+.center3 {
     /* margin-right: 2rem; */
 }
+
 .bill-cart {
-    /* right: 8rem; */
+    width: 30rem;
 }
+
 .first {
     margin-top: 12rem;
     display: flex;
@@ -133,9 +137,3 @@
     align-items: center;
     justify-content: center;
 }
-/* .cart-container{
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
-    row-gap: 2rem;
-} */

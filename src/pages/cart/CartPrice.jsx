@@ -42,7 +42,7 @@ function CartPrice() {
 				</div>
 
 				<div className="footer">
-					<div className="buttons">
+					<div className="buttons place-order-btn">
 						<button type="button">PLACE ORDER</button>
 					</div>
 				</div>
