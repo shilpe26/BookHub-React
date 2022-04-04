@@ -52,4 +52,5 @@
     width: 5rem;
     background-color: var(--yellow-color);
     color: var(--dark-color);
+    cursor: pointer;
 }

@@ -33,9 +33,9 @@ function Wishlist() {
 									Explore more and shortlist some items
 								</h4>
 								<div className="buttons">
-									<button>
-										<Link to="/product">START SHOPPING</Link>
-									</button>
+									<Link to="/product">
+										<button>START SHOPPING</button>
+									</Link>
 								</div>
 							</div>
 						</div>
