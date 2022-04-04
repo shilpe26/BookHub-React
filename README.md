@@ -34,5 +34,8 @@ An E-Commerece Application maded with `React.js` where you can read books of you
 # Add To Cart Page
 ![cart bookhub react](https://user-images.githubusercontent.com/56014170/161383853-58c0fbbf-ca5f-4222-9eb8-8541a1b3c119.gif)
 
+# Single Product Page
+![single product page ](https://user-images.githubusercontent.com/56014170/161629599-2aa3d020-d753-499d-9765-8df2d499cbef.gif)
+
 🎯It is fully responsive in nature and fulfills varoius accessibilities parameters.
 🎯Made with React JS library⭐
