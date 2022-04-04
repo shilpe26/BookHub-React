@@ -26,6 +26,6 @@
 }
 
 .bg-wishlist {
-    background-color: #B2DEFF;
+    background-color: var(--light-bg);
     border-radius: 4px;
 }

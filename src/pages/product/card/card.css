@@ -26,12 +26,8 @@
 
 .overlay-text{
     background-color: rgba(0,0,0,0.4);
-     width: 21rem;
-    /*height: 100%;
-    position: absolute;
-    left: 0;
-    top: -40%; */
-    color: white;
+    width: 21rem;
+    color: var(--white-hover);
     border-radius: 4px;
     font-size: 1.7rem;
 }

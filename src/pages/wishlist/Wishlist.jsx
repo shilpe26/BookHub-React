@@ -32,9 +32,9 @@ function Wishlist() {
 								<h4 className="heading-primary">
 									Explore more and shortlist some items
 								</h4>
-								<div className="buttons">
+								<div className="buttons empty-cart-btn">
 									<Link to="/product">
-										<button>START SHOPPING</button>
+										<button className="empty-cart-btn">START SHOPPING</button>
 									</Link>
 								</div>
 							</div>

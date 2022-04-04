@@ -25,9 +25,9 @@ function Cart() {
 								<h4 className="heading-primary">
 									There is nothing in your bag. Let's add some items.
 								</h4>
-								<div className="buttons">
+								<div className="buttons empty-cart-btn">
 									<Link to="/product">
-										<button>START SHOPPING</button>
+										<button className="empty-cart-btn">START SHOPPING</button>
 									</Link>
 								</div>
 							</div>
