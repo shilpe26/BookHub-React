@@ -14,6 +14,8 @@
 @import url("./pages/wishlist/wishlist.css");
 @import url("./pages/cart/cart.css");
 @import url("./pages//page_not_found/notfound.css");
+@import url("./pages//ProductDetail//productDetail.css");
+
 
 .App{
     display: flex;

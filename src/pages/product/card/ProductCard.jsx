@@ -1,6 +1,7 @@
 import React from "react";
 import { useWishlist } from "../../wishlist/wishlist-context";
 import { useCart } from "../../cart/cart-context";
+import { Link } from "react-router-dom";
 
 const ACTIONS = {
 	ADD_TO_WISHLIST: "add-to-wishlist",
@@ -60,11 +61,13 @@ function ProductCard({
 	return (
 		<div className="card-vertical flex-items">
 			<div className="image-container badge-container">
-				<img
-					className="img-responsive card-img"
-					src={productImage}
-					alt="fiction_books"
-				/>
+				<Link to={`/product/${_id}`}>
+					<img
+						className="img-responsive card-img"
+						src={productImage}
+						alt="books"
+					/>
+				</Link>
 				<span className="badge bg-primary">#1Bestseller</span>
 			</div>
 			<div className="text-container">

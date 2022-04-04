@@ -1,33 +1,35 @@
 import "./App.css";
-import {Routes, Route} from "react-router-dom";
-import { Navbar,Footer } from "./components/Component";
-import {Home, Cart, Product, Wishlist, Login, Signup} from "./pages/Pages";
+import { Routes, Route } from "react-router-dom";
+import { Navbar, Footer } from "./components/Component";
+import { Home, Cart, Product, Wishlist, Login, Signup } from "./pages/Pages";
 import Mockman from "mockman-js";
 import { NotFound } from "./pages/page_not_found/NotFound";
+import { ProductDetail } from "./pages/ProductDetail/ProductDetail";
 
 function App() {
-  return (
-    <div className="App">
-      <div>
-      <Navbar />
-      </div>
-      <div className="main-style">
-      <Routes>
-      <Route path="/" element={<Home/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/signup" element={<Signup/>}></Route>
-        <Route path="/cart" element={<Cart/>}></Route>
-        <Route path="/Product" element={<Product/>}></Route>
-        <Route path="/wishlist" element={<Wishlist/>}></Route>
-        <Route path="/mock" element={<Mockman/>}></Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      </div>
-      <div>
-    <Footer />
-    </div>
-    </div>
-  );
+	return (
+		<div className="App">
+			<div>
+				<Navbar />
+			</div>
+			<div className="main-style">
+				<Routes>
+					<Route path="/" element={<Home />}></Route>
+					<Route path="/login" element={<Login />}></Route>
+					<Route path="/signup" element={<Signup />}></Route>
+					<Route path="/cart" element={<Cart />}></Route>
+					<Route path="/Product" element={<Product />}></Route>
+					<Route path="/Product/:productId" element={<ProductDetail />}></Route>
+					<Route path="/wishlist" element={<Wishlist />}></Route>
+					<Route path="/mock" element={<Mockman />}></Route>
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</div>
+			<div>
+				<Footer />
+			</div>
+		</div>
+	);
 }
 
 export default App;

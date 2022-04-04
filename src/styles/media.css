@@ -80,7 +80,10 @@
     .cards_for-book {
         top: 22rem;
         position: relative;
+        margin-top: -25rem;
+        margin-bottom: 5rem;
     }
+
 
     .cards_for-book-category {
         top: -4rem;
@@ -97,6 +100,11 @@
 
     .bill-cart {
         margin-top: 25rem;
+    }
+
+    .product-description {
+        margin-top: 3rem;
+        width: 40rem;
     }
 
     /* Filter section */
@@ -139,6 +147,25 @@
     .cart-bookhub .cart-1 {
         width: 90%;
         margin-top: 25rem;
+    }
+
+    .cart-1 {
+        width: 41rem;
+        margin-top: 2rem;
+        padding: 1rem;
+        margin-left: 4rem;
+        margin-right: 13rem;
+        height: 33rem;
+    }
+
+    .sp-page-image {
+        width: 54%;
+        padding: 1rem;
+        height: 34rem;
+    }
+
+    .signUp-btn-bookhub {
+        font-size: 1.2rem;
     }
 
     div.main-style {
