@@ -63,22 +63,15 @@
 
 
     .deal {
-        margin-top: 20rem;
-    }
-
-    .first {
-        top: 6rem;
-        position: absolute;
-        right: 20rem;
-        text-align: center;
+        margin-top: 8rem;
     }
 
     .cards_for-wish {
-        margin-top: 22rem;
+        margin-top: -14rem;
     }
 
     .cards_for-book {
-        top: 22rem;
+        top: 18rem;
         position: relative;
         margin-top: -25rem;
         margin-bottom: 5rem;
@@ -95,11 +88,11 @@
     }
 
     .bg-cart {
-        margin-top: 4rem;
+        margin-top: -11rem;
     }
 
     .bill-cart {
-        margin-top: 25rem;
+        margin-top: 8rem;
     }
 
     .product-description {
@@ -150,12 +143,7 @@
     }
 
     .cart-1 {
-        width: 41rem;
-        margin-top: 2rem;
-        padding: 1rem;
-        margin-left: 4rem;
-        margin-right: 13rem;
-        height: 33rem;
+        margin-left: 3rem;
     }
     .img1.single-page-pimage {
         padding: 1rem;

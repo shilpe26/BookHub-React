@@ -54,7 +54,7 @@ function Wishlist() {
 										}
 										className="button-close-wishlist"
 									>
-										X
+										<i class="fa-solid fa-xmark"></i>
 									</button>
 									<div className="image-container badge-container">
 										<img
