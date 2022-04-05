@@ -4,7 +4,7 @@ function Signup() {
 	return (
 		<div className="login-form-container signup">
 			<form className="login_form-bookhub" action="">
-				<h3 className="heading-login">SIGN UP</h3>
+				<h3 className="heading-login">Signup</h3>
 				<input
 					type="email"
 					name="email"

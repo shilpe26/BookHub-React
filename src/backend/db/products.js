@@ -59,7 +59,7 @@ export const products = [
 	{
 		_id: uuid(),
 		title: "The Measure of a Man",
-		author: "William W. Johnstone",
+		author: "William W. Johnstone".substring(0, 15) + " ...",
 		price: "9.49",
 		productImage: "https://i.postimg.cc/XBpp63tN/fiction05.jpg",
 		inStock: true,
@@ -81,7 +81,7 @@ export const products = [
 	{
 		_id: uuid(),
 		title: "The Lost City of Book",
-		author: "Gregory L Norris",
+		author: "Gregory L Norris".substring(0, 15) + " ...",
 		price: "9.99",
 		productImage: "https://i.postimg.cc/jwtYVXwM/fiction.jpg",
 		inStock: true,
@@ -114,7 +114,7 @@ export const products = [
 	{
 		_id: uuid(),
 		title: "A Ghost in Shining Armor",
-		author: "Therese Beharrie",
+		author: "Therese Beharrie".substring(0, 15) + " ...",
 		price: "14.41",
 		productImage: "https://i.postimg.cc/vD8w30dB/fiction25.jpg",
 		inStock: true,
@@ -226,7 +226,7 @@ export const products = [
 	{
 		_id: uuid(),
 		title: "Maritime Madness",
-		author: "Michael David Sarbone",
+		author: "Michael David Sarbone".substring(0, 15) + " ...",
 		price: "2.99",
 		productImage: "https://i.postimg.cc/8fTKwpX5/horror05.jpg",
 		inStock: true,
@@ -270,7 +270,7 @@ export const products = [
 	{
 		_id: uuid(),
 		title: "Before I Sleep",
-		author: "L.J. Keys, Luc Bardi",
+		author: "L.J. Keys, Luc Bardi".substring(0, 15) + " ...",
 		price: "7.00",
 		productImage: "https://i.postimg.cc/9rFg7fqg/horror09.jpg",
 		inStock: false,

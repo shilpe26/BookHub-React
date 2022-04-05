@@ -35,11 +35,11 @@ function ProductDetail() {
 			<h1 className="productId">ProductsDetails</h1>
 
 			<main className="product-details">
-				<div className="center3 cart-1 single-product-desc sp-page-image">
+				<div className="center3 sp-page-image">
 					<div className="container cart-box">
 						<div className="img_container">
 							<img
-								className="img1 imag-cart single-page-pimage"
+								className="img1 single-page-pimage"
 								src={productImage}
 								alt="place-img"
 							/>

@@ -39,7 +39,7 @@ function Navbar() {
 							Login
 						</Link>
 						<Link to="/signup" id="signUp-btn" className="signUp-btn-bookhub">
-							Sign up
+							Signup
 						</Link>
 					</div>
 				</div>
