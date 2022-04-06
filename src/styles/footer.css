@@ -22,6 +22,7 @@
     background: var(--bg-color);
     margin: 0 1.3rem;
     border-radius: 50%;
+    display: inline-block;
 }
 
 .footer_for-bookhub:hover {

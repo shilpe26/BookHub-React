@@ -32,7 +32,7 @@ function ProductDetail() {
 
 	return (
 		<div>
-			<h1 className="productId">ProductsDetails</h1>
+			<h1 className="productId">Product Details</h1>
 
 			<main className="product-details">
 				<div className="center3 sp-page-image">
