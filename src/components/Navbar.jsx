@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import Logo from "../assets/icon-logo.png";
 import { useCart } from "../pages/cart/cart-context";
 import { useWishlist } from "../pages/wishlist/wishlist-context";
+import { useAuthFunctions } from "../Context/useAuthFunctions";
 
 function Navbar() {
 	const { wishlist_state } = useWishlist();
 	const { cart_state } = useCart();
+	const token = localStorage.getItem("userToken");
+	const { logout } = useAuthFunctions();
 	return (
 		<div>
 			<header className="header">
@@ -35,11 +38,17 @@ function Navbar() {
 						<Link to="/cart" className="fas fa-shopping-cart header-icons">
 							<div className="badge-icon">{cart_state.quantity}</div>
 						</Link>
-						<Link to="/login" id="login-btn" className="login-btn-bookhub">
-							Login
-						</Link>
-						<Link to="/signup" id="signUp-btn" className="signUp-btn-bookhub">
-							Signup
+						{!token ? (
+							<Link to="/login" id="login-btn" className="login-btn-bookhub">
+								<button className="btn login-btn">Login</button>
+							</Link>
+						) : (
+							<button onClick={logout} className="btn login-btn">
+								Logout
+							</button>
+						)}
+						<Link to="/signup" id="signUp-btn">
+							<button className="btn signUp-btn-bookhub">Signup</button>
 						</Link>
 					</div>
 				</div>

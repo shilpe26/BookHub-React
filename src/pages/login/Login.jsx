@@ -1,45 +1,91 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../Context/auth-context";
+import { useAuthFunctions } from "../../Context/useAuthFunctions";
+import { Loading } from "../../components/Component";
 
 function Login() {
+	const [showPassword, setShowPassword] = useState(false);
+	const { authState, authDispatch } = useAuth();
+	const [loading, setLoading] = useState(false);
+	const { login } = useAuthFunctions();
+
+	const loginHandler = (e) => {
+		e.preventDefault();
+		login(setLoading);
+	};
 	return (
 		<div className="login-form-container">
-			<form className="login_form-bookhub" action="">
+			<form className="login_form-bookhub" onSubmit={loginHandler}>
 				<h3 className="heading-login">Login</h3>
-				<input
-					type="email"
-					className="box"
-					placeholder="Email"
-					aria-label="email"
-				/>
-				<input
-					type="password"
-					className="box"
-					placeholder="Password"
-					aria-label="password"
-				/>
-				<div className="checkbox">
-					<input type="checkbox" id="remember-me" aria-label="checkbox" />
-					<label className="label-bookhub" htmlFor="remember-me">
-						remember me
-					</label>
+				<div className="input-group">
+					<label htmlFor="email">Email</label>
+					<input
+						className="input-field"
+						type="email"
+						id="email"
+						name="email"
+						placeholder="shilpe@gmail.com"
+						required
+						value={authState.email}
+						onFocus={() => authDispatch({ type: "ERROR", payload: "" })}
+						onChange={(e) =>
+							authDispatch({ type: "EMAIL", payload: e.target.value })
+						}
+					/>
 				</div>
-				<input
-					type="submit"
-					value="Login"
-					className="btn"
-					aria-label="submit"
-				/>
-				<p className="additional-desc">forget password ? Click here</p>
-				<p className="additional-desc">
-					don't have an account ?
-					<Link to="/signup">
-						<button type="button" className="btn-warning">
-							Create One
+				<div className="input-group">
+					<label className="password-label" htmlFor="password">
+						Password
+						<button
+							className="eye-btn"
+							onClick={(e) => {
+								e.preventDefault();
+								setShowPassword((val) => !val);
+							}}
+						>
+							{showPassword ? (
+								<i className="fas fa-eye"></i>
+							) : (
+								<i className="fas fa-eye-slash"></i>
+							)}
 						</button>
-					</Link>
-				</p>
+					</label>
+					<input
+						className="input-field"
+						type={showPassword ? "text" : "password"}
+						id="password"
+						name="password"
+						placeholder="********"
+						required
+						minLength="8"
+						value={authState.password}
+						onFocus={() => authDispatch({ type: "ERROR", payload: "" })}
+						onChange={(e) =>
+							authDispatch({ type: "PASSWORD", payload: e.target.value })
+						}
+					/>
+				</div>
+				<div className="input-group">
+					<button className="btn btn-primary">Log In</button>
+				</div>
+				<div className="input-group">
+					<button
+						className="btn btn-info"
+						onClick={() => authDispatch({ type: "TEST-CREDENTIALS" })}
+					>
+						Test Login
+					</button>
+
+					<p className="no-account text-md">
+						Don't have an account ?{" "}
+						<Link to="/signup" className="link text-md">
+							SignUp
+						</Link>
+					</p>
+				</div>
 			</form>
+			{loading && <Loading />}
 		</div>
 	);
 }
