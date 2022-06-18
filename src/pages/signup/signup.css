@@ -16,7 +16,21 @@
     height: 100%;
     width: 100%;
 }
+.input-group{
+    text-align: left;
+    margin-bottom: 1rem;
+    color: var(--primary-gray);
+}
 
+.input-group input{
+    width: 100%;
+    margin: 5px auto;
+    padding: 4px;
+    border: solid 2px;
+    border-radius: 5px;
+    height: 6vh;
+    font-size: 1.3rem;
+}
 .login-form-container.active {
     right: 0;
 }
@@ -33,7 +47,7 @@
 
 .heading-login {
     font-size: 2.5rem;
-    color: var(--black);
+    color: var(--dark-color);
     text-align: center;
     margin: 2rem auto;
 }
@@ -42,10 +56,10 @@
     width: 100%;
     margin: .7rem 0;
     font-size: 1.6rem;
-    border: var(--border);
+    border: var(--dark-color);
     border-radius: .5rem;
     padding: 1rem 1.2rem;
-    color: var(--black);
+    color: var(--dark-color);
     text-transform: none;
 }
 
@@ -56,10 +70,8 @@
     padding: 1rem 0;
 }
 
-.label-bookhub {
-    font-size: 1.5rem;
-    color: var(--dark-color);
-    cursor: pointer;
+.label-class{
+    margin-top: 2rem;
 }
 
 .login-form-container form .btn {

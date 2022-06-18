@@ -5,7 +5,8 @@
     cursor: pointer;
     background-color: var(--bg-color);
 }
-.login-btn{
+
+.login-btn {
     padding: 0.5rem;
 }
 
@@ -17,19 +18,16 @@
     font-size: 1.5rem;
     background-color: var(--yellow-color);
 }
-/* .signUp-btn-bookhub:hover{
-    border: 1.9px solid var(--white-hover);
-} */
 
 .login-form-container {
-     display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, .9);
-     position: fixed;
+    position: fixed;
     z-index: 999;
     height: 100%;
-    width: 100%;
+    width: 80%;
 }
 
 .login-form-container.active {
@@ -38,7 +36,7 @@
 
 .heading-login {
     font-size: 2.5rem;
-    color: var(--black);
+    color: var(--dark-color);
     text-align: center;
     margin: 2rem auto;
 }
@@ -47,10 +45,10 @@
     width: 100%;
     margin: .7rem 0;
     font-size: 1.6rem;
-    border: var(--border);
+    border: var(--dark-color);
     border-radius: .5rem;
     padding: 1rem 1.2rem;
-    color: var(--black);
+    color: var(--dark-color);
     text-transform: none;
 }
 
@@ -99,30 +97,43 @@
     margin-left: 1rem;
 }
 
-.password-label{
+.password-label {
     position: relative;
-    margin-top: 2rem;
 }
-.input-field {
-    border: solid 2px var(--primary-color);
-    border-radius: 2px;
-    padding: 10px;
-    font-size: 1.5rem;
+
+.input-group {
+    text-align: left;
+    margin-bottom: 1rem;
+    color: var(--primary-gray);
+}
+
+.input-group input {
     width: 100%;
+    margin: 5px auto;
+    padding: 4px;
+    border: solid 2px var(--bg-color);
+    border-radius: 5px;
+    height: 6vh;
 }
-.eye-btn{
+
+.eye-btn {
     position: absolute;
     right: 0;
     top: 0;
     cursor: pointer;
-    color: var(--primary-color);
+    color: var(--primary-gray);
     background: transparent;
     border: none;
     font-size: 1.5rem;
 }
-.no-account{
+
+.no-account {
     color: var(--primary-gray);
 }
-.error-text{
+.link{
+    background-color: var(--light-bg);
+    border-radius: 4px;
+}
+.error-text {
     color: #E83A14;
 }
