@@ -1,16 +1,12 @@
 /* login css */
 .login-btn-bookhub {
     border-radius: 4px;
-    border: solid 2px var(--secondary-gray);
-    padding: 0.7rem 1.5rem;
     margin-left: 1.8rem;
     cursor: pointer;
-    font-size: 1.5rem;
     background-color: var(--bg-color);
 }
-
-.login-btn-bookhub:hover {
-    border-color: var(--white-hover);
+.login-btn{
+    padding: 0.5rem;
 }
 
 .signUp-btn-bookhub {
@@ -21,9 +17,9 @@
     font-size: 1.5rem;
     background-color: var(--yellow-color);
 }
-.signUp-btn-bookhub:hover{
+/* .signUp-btn-bookhub:hover{
     border: 1.9px solid var(--white-hover);
-}
+} */
 
 .login-form-container {
      display: flex;
@@ -33,7 +29,7 @@
      position: fixed;
     z-index: 999;
     height: 100%;
-    width: 100%; 
+    width: 100%;
 }
 
 .login-form-container.active {
@@ -77,12 +73,6 @@
     margin: 1.5rem 0;
 }
 
-.additional-desc {
-    padding-top: .8rem;
-    color: var(--dark-color);
-    font-size: 1.5rem;
-}
-
 /* Close button css */
 #close-login-btn {
     position: absolute;
@@ -107,4 +97,32 @@
     cursor: pointer;
     border-radius: 4px;
     margin-left: 1rem;
+}
+
+.password-label{
+    position: relative;
+    margin-top: 2rem;
+}
+.input-field {
+    border: solid 2px var(--primary-color);
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 1.5rem;
+    width: 100%;
+}
+.eye-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    color: var(--primary-color);
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+}
+.no-account{
+    color: var(--primary-gray);
+}
+.error-text{
+    color: #E83A14;
 }

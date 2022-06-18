@@ -50,7 +50,7 @@ section {
 }
 
 .btn:hover {
-    border: 2px solid var(--white-hover);
+    background-color:var(--white-hover);
 }
 
 .header-bookhub {
