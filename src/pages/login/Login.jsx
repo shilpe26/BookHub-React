@@ -25,7 +25,7 @@ function Login() {
 						type="email"
 						id="email"
 						name="email"
-						placeholder="shilpe@gmail.com"
+						placeholder="shilpe26@gmail.com"
 						required
 						value={authState.email}
 						onFocus={() => authDispatch({ type: "ERROR", payload: "" })}

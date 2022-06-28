@@ -16,7 +16,6 @@ function CartProducts() {
 		<div>
 			{cart_state.items.map((item) => (
 				<div key={item._id}>
-					{/* <main className="cart-bookhub"> */}
 					<div className="center3 cart-1">
 						<div className="container cart-box">
 							<div className="img_container">
@@ -97,7 +96,6 @@ function CartProducts() {
 							</div>
 						</div>
 					</div>
-					{/* </main> */}
 				</div>
 			))}
 		</div>
