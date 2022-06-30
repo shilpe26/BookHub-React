@@ -10,32 +10,9 @@ function Card({ drawerVisible, setDrawerVisible }) {
 			{filteredProducts.length === 0 ? (
 				<h3>Products Loading...</h3>
 			) : (
-				filteredProducts.map(
-					({
-						_id,
-						title,
-						author,
-						price,
-						productImage,
-						inStock,
-						rating,
-						isFastDelivery,
-						categoryName,
-					}) => (
-						<ProductCard
-							key={_id}
-							_id={_id}
-							title={title}
-							author={author}
-							price={price}
-							productImage={productImage}
-							inStock={inStock}
-							rating={rating}
-							isFastDelivery={isFastDelivery}
-							categoryName={categoryName}
-						/>
-					)
-				)
+				filteredProducts.map((product) => (
+					<ProductCard product={product} key={product._id} />
+				))
 			)}
 
 			<div className="filter_btn-book">

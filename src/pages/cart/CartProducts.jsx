@@ -1,16 +1,18 @@
 import React from "react";
 import { useCart } from "../cart/cart-context";
-import { useWishlist } from "../wishlist/wishlist-context";
+import { useCartServerCalls } from "./useCartServerCalls";
+import { useWishlistServerCalls } from "../wishlist/useWishlistServerCalls";
 
-const ACTIONS = {
-	ADD_TO_WISHLIST: "add-to-wishlist",
-	REMOVE_FROM_CART: "remove-from-cart",
-	DECREASE_COUNT: "decrease-count-of-item",
-	INCREASE_COUNT: "increase-count-of-item",
-};
 function CartProducts() {
-	const { cart_state, cart_dispatch } = useCart();
-	const { wishlist_dispatch } = useWishlist();
+	const { cart_state } = useCart();
+	const { deleteFromCart, increaseQuantity, decreaseQuantity } =
+		useCartServerCalls();
+	const { addToWishlist } = useWishlistServerCalls();
+
+	function wishlistHandler(item) {
+		addToWishlist({ ...item });
+		deleteFromCart(item._id);
+	}
 
 	return (
 		<div>
@@ -32,63 +34,26 @@ function CartProducts() {
 									<div className="cart-quntity">
 										<button
 											className="item-quantity"
-											onClick={() =>
-												cart_dispatch({
-													type: ACTIONS.DECREASE_COUNT,
-													payload: item._id,
-												})
-											}
+											onClick={() => decreaseQuantity(item._id)}
 										>
 											-
 										</button>
 										<p>{item.productCount}</p>
 										<button
 											className="item-quantity"
-											onClick={() =>
-												cart_dispatch({
-													type: ACTIONS.INCREASE_COUNT,
-													payload: item._id,
-												})
-											}
+											onClick={() => increaseQuantity(item._id)}
 										>
 											+
 										</button>
 									</div>
 									<div className="buttons">
 										<button
-											onClick={() =>
-												cart_dispatch({
-													type: ACTIONS.REMOVE_FROM_CART,
-													payload: item._id,
-												})
-											}
+											onClick={() => deleteFromCart(item._id)}
 											type="button"
 										>
 											REMOVE
 										</button>
-										<button
-											onClick={() => {
-												wishlist_dispatch({
-													type: ACTIONS.ADD_TO_WISHLIST,
-													payload: {
-														_id: item._id,
-														title: item.title,
-														author: item.author,
-														inStock: item.inStock,
-														rating: item.rating,
-														productImage: item.productImage,
-														isFastDelivery: item.isFastDelivery,
-														categoryName: item.categoryName,
-														price: item.price,
-													},
-												});
-												cart_dispatch({
-													type: ACTIONS.REMOVE_FROM_CART,
-													payload: item._id,
-												});
-											}}
-											type="button"
-										>
+										<button onClick={() => wishlistHandler(item)} type="button">
 											<i className="fas fa-heart"></i>Wishlist
 										</button>
 									</div>

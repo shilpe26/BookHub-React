@@ -2,33 +2,20 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "./productDetail.css";
 import { useProduct } from "../filters/Product-context";
-import { useWishlist } from "../wishlist/wishlist-context";
-import { useCart } from "../cart/cart-context";
+import { useWishlistServerCalls } from "../wishlist/useWishlistServerCalls";
+import { useCartServerCalls } from "../cart/useCartServerCalls";
 
-const ACTIONS = {
-	ADD_TO_WISHLIST: "add-to-wishlist",
-	ADD_TO_CART: "add-to-cart",
-};
 function ProductDetail() {
 	const { productId } = useParams();
 	const { filteredProducts } = useProduct();
-	const { wishlist_dispatch } = useWishlist();
-	const { cart_dispatch } = useCart();
+	const { addToWishlist } = useWishlistServerCalls();
+	const { addToCart } = useCartServerCalls();
 
 	const getProduct = () => {
 		return filteredProducts.find((element) => element._id === productId);
 	};
-	const {
-		_id,
-		title,
-		author,
-		inStock,
-		rating,
-		productImage,
-		isFastDelivery,
-		categoryName,
-		price,
-	} = getProduct();
+	const product = getProduct();
+	const { title, author, inStock, rating, productImage, price } = product;
 
 	return (
 		<div>
@@ -66,45 +53,14 @@ function ProductDetail() {
 								</h3>
 								<div className="buttons">
 									<button
-										onClick={() =>
-											wishlist_dispatch({
-												type: ACTIONS.ADD_TO_WISHLIST,
-												payload: {
-													_id,
-													title,
-													author,
-													inStock,
-													rating,
-													productImage,
-													isFastDelivery,
-													categoryName,
-													price,
-												},
-											})
-										}
+										onClick={() => addToWishlist({ ...product })}
 										value="wishlist"
 										type="button"
 									>
 										<i className="fas fa-heart"></i>Wishlist
 									</button>
 									<button
-										onClick={() =>
-											cart_dispatch({
-												type: ACTIONS.ADD_TO_CART,
-												payload: {
-													_id,
-													title,
-													author,
-													inStock,
-													rating,
-													productImage,
-													isFastDelivery,
-													categoryName,
-													price,
-													productCount: 1,
-												},
-											})
-										}
+										onClick={() => addToCart({ ...product })}
 										value="cart"
 										type="button"
 									>

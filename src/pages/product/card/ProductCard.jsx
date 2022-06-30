@@ -1,63 +1,35 @@
 import React from "react";
-import { useWishlist } from "../../wishlist/wishlist-context";
-import { useCart } from "../../cart/cart-context";
-import { Link } from "react-router-dom";
+import { useWishlistServerCalls } from "../../wishlist/useWishlistServerCalls";
+import { useCartServerCalls } from "../../cart/useCartServerCalls";
+import { Link, useNavigate } from "react-router-dom";
+import { useAlert } from "react-alert";
 
-const ACTIONS = {
-	ADD_TO_WISHLIST: "add-to-wishlist",
-	REMOVE_FROM_WISHLIST: "remove-from-wishlist",
-	ADD_TO_CART: "add-to-cart",
-	REMOVE_FROM_CART: "remove-from-cart",
-};
-function ProductCard({
-	_id,
-	title,
-	author,
-	inStock,
-	rating,
-	productImage,
-	isFastDelivery,
-	categoryName,
-	price,
-}) {
-	const { wishlist_dispatch } = useWishlist();
-	const { cart_dispatch } = useCart();
+function ProductCard({ product }) {
+	const { _id, title, author, inStock, rating, productImage, price } = product;
+	const alert = useAlert();
+	const navigate = useNavigate();
+	const { addToWishlist } = useWishlistServerCalls();
+	const { addToCart } = useCartServerCalls();
 
-	function wishListHandler() {
-		wishlist_dispatch({
-			type: ACTIONS.ADD_TO_WISHLIST,
-			payload: {
-				_id,
-				title,
-				author,
-				inStock,
-				rating,
-				productImage,
-				isFastDelivery,
-				categoryName,
-				price,
-			},
-		});
+	function wishlistHandler() {
+		const token = localStorage.getItem("userToken");
+		if (token) {
+			addToWishlist({ ...product });
+		} else {
+			navigate("/login");
+			alert.show("Please Login First!", { type: "info" });
+		}
 	}
 
 	function cartHandler() {
-		cart_dispatch({
-			type: ACTIONS.ADD_TO_CART,
-			payload: {
-				_id,
-				title,
-				author,
-				inStock,
-				rating,
-				productImage,
-				isFastDelivery,
-				categoryName,
-				price,
-				productCount: 1,
-			},
-		});
+		const token = localStorage.getItem("userToken");
+		if (token) {
+			addToCart({ ...product });
+		} else {
+			navigate("/login");
+			alert.show("Please Login First!", { type: "info" });
+		}
 	}
-
 	return (
 		<div className="card-vertical flex-items">
 			<div className="image-container badge-container">
@@ -76,10 +48,10 @@ function ProductCard({
 				<p className="sub-heading">by {author}</p>
 				<h3 className="price-tag">{rating}⭐</h3>
 				<div className="buttons">
-					<button onClick={wishListHandler} value="wishlist" type="button">
+					<button onClick={wishlistHandler} type="button">
 						<i className="fas fa-heart"></i>Wishlist
 					</button>
-					<button onClick={cartHandler} value="cart" type="button">
+					<button onClick={cartHandler} type="button">
 						Add to Cart
 					</button>
 				</div>
