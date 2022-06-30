@@ -9,7 +9,9 @@
 .login-btn {
     padding: 0.5rem;
 }
-
+.login_form-bookhub{
+    width: 100%;
+}
 .signUp-btn-bookhub {
     border-radius: 4px;
     padding: 0.7rem 1.5rem;
@@ -103,7 +105,7 @@
 
 .input-group {
     text-align: left;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: var(--primary-gray);
 }
 
@@ -114,6 +116,10 @@
     border: solid 2px var(--bg-color);
     border-radius: 5px;
     height: 6vh;
+}
+
+.text-input{
+    margin-top: 1rem;
 }
 
 .eye-btn {

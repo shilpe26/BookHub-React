@@ -69,14 +69,15 @@ function Login() {
 				<div className="input-group">
 					<button className="btn btn-primary">Log In</button>
 				</div>
-				<div className="input-group">
+				<div className="input-group text-input">
 					<button
 						className="btn btn-info"
 						onClick={() => authDispatch({ type: "TEST-CREDENTIALS" })}
 					>
 						Test Login
 					</button>
-
+				</div>
+				<div className="input-group">
 					<p className="no-account text-md">
 						Don't have an account ?{" "}
 						<Link to="/signup" className="link text-md">
