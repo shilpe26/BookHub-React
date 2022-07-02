@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useCart } from "../cart/cart-context";
+import { Link } from "react-router-dom";
 
 function CartPrice() {
 	const { cart_state } = useCart();
@@ -43,7 +44,9 @@ function CartPrice() {
 
 				<div className="footer">
 					<div className="buttons place-order-btn">
-						<button type="button">PLACE ORDER</button>
+						<Link to="/checkout">
+							<button type="button">PLACE ORDER</button>
+						</Link>
 					</div>
 				</div>
 			</div>

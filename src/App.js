@@ -1,7 +1,15 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Navbar, Footer, HideAuth, RequiresAuth } from "./components/Component";
-import { Home, Cart, Product, Wishlist, Login, Signup } from "./pages/Pages";
+import {
+	Home,
+	Cart,
+	Product,
+	Wishlist,
+	Login,
+	Signup,
+	Checkout,
+} from "./pages/Pages";
 import Mockman from "mockman-js";
 import { NotFound } from "./pages/page_not_found/NotFound";
 import { ProductDetail } from "./pages/ProductDetail/ProductDetail";
@@ -41,6 +49,7 @@ function App() {
 					/>
 					<Route path="/Product" element={<Product />} />
 					<Route path="/Product/:productId" element={<ProductDetail />} />
+					<Route path="/checkout" element={<Checkout />} />
 					<Route
 						path="/wishlist"
 						element={
