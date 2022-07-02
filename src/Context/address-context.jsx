@@ -1,17 +1,16 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import toast from "react-hot-toast";
+import { useAlert } from "react-alert";
 import {
 	getAddressService,
 	addAddressService,
 	editAddressService,
 	deleteAddressService,
 } from "../services/addressServices";
-import { useAuth } from "./authContext";
 import {
 	addressReducer,
 	initialState,
 	initialUserObj,
-} from "../reducers/addressReducer";
+} from "../reducer/addressReducer";
 
 const AddressContext = createContext();
 
@@ -21,10 +20,11 @@ const AddressProvider = ({ children }) => {
 		initialState
 	);
 
-	const { token, isAuth } = useAuth();
+	const token = localStorage.getItem("userToken");
+	const alert = useAlert();
 
 	useEffect(() => {
-		if (isAuth) {
+		if (token) {
 			try {
 				(async () => {
 					const { data, status } = await getAddressService(token);
@@ -56,7 +56,7 @@ const AddressProvider = ({ children }) => {
 
 				if (status === 201) {
 					dispatchAddress({ type: "GET_ADDRESS", payload: data.address });
-					toast.success("Address updated");
+					alert.show("Address updated", { type: "success" });
 				}
 			} catch (err) {
 				console.error(err);
@@ -70,7 +70,7 @@ const AddressProvider = ({ children }) => {
 
 				if (status === 201) {
 					dispatchAddress({ type: "GET_ADDRESS", payload: data.address });
-					toast.success("Address added");
+					alert.show("Address added", { type: "success" });
 				}
 			} catch (err) {
 				console.error(err);
@@ -84,7 +84,7 @@ const AddressProvider = ({ children }) => {
 
 			if (status === 200) {
 				dispatchAddress({ type: "GET_ADDRESS", payload: data.address });
-				toast.success("Address deleted");
+				alert.show("Address deleted", { type: "success" });
 			}
 		} catch (err) {
 			console.error(err);

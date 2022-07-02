@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./checkout.css";
+import { useAddress } from "../../Context/address-context";
+import { AddressModal } from "../addressModal/AddressModal";
 import { OrderDetails } from "./OrderDetails";
-// import { useAddress } from "../../contexts/addressContext";
-import { Link, useNavigate } from "react-router-dom";
 
 function Checkout() {
 	const {
@@ -12,7 +12,6 @@ function Checkout() {
 
 	const [showAddrModal, setShowAddrModal] = useState(false);
 
-	const navigate = useNavigate();
 	return (
 		<div>
 			<section className="main-section checkout-container mt-32">
@@ -54,11 +53,11 @@ function Checkout() {
 							) : (
 								<>
 									<p>No address available.</p>
-									<p>
+									{/* <p>
 										<Link className="btn-link" to={"/profile/addresses"}>
 											Add address
 										</Link>
-									</p>
+									</p> */}
 								</>
 							)}
 						</div>

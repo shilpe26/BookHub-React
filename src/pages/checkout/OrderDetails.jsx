@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "./checkout.css";
 import { useAlert } from "react-alert";
 import { v4 as uuid } from "uuid";
 import { useCart } from "../cart/cart-context";
+import "./checkout.css";
 
 function OrderDetails() {
 	const [totalPrice, setTotalPrice] = useState(0);
 	const alert = useAlert();
 	const { cart_state } = useCart();
-	const user = JSON.parse(localStorage.getItem("user"));
+
+	// const user = JSON.parse(localStorage.getItem("user"));
 
 	useEffect(() => {
 		if (cart_state.items.length !== 0) {
@@ -54,13 +55,13 @@ function OrderDetails() {
 			handler: async function (response) {
 				const orderId = uuid().toString().split("-")[0];
 
-				const orderData = {
-					products: [...cart_state],
-					amount: totalPrice,
-					paymentId: response.razorpay_payment_id,
-					orderId,
-					// delivery: currentAddress,
-				};
+				// const orderData = {
+				// 	products: [...cart_state],
+				// 	amount: totalPrice,
+				// 	paymentId: response.razorpay_payment_id,
+				// 	orderId,
+				// 	// delivery: currentAddress,
+				// };
 
 				// const { data, status } = await addOrderService(orderData, token);
 
