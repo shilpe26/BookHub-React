@@ -35,6 +35,7 @@ const AddressProvider = ({ children }) => {
 				})();
 			} catch (err) {
 				console.error(err);
+				console.log("address context");
 			}
 		}
 	}, [token]);

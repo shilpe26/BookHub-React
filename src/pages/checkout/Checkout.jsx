@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./checkout.css";
 import { useAddress } from "../../Context/address-context";
 import { AddressModal } from "../addressModal/AddressModal";
-import { OrderDetails } from "./OrderDetails";
+// import { OrderDetails } from "./OrderDetails";
 
 function Checkout() {
 	const {
@@ -70,7 +70,7 @@ function Checkout() {
 						</button>
 					</div>
 
-					<OrderDetails />
+					{/* <OrderDetails /> */}
 				</div>
 
 				{showAddrModal ? (
