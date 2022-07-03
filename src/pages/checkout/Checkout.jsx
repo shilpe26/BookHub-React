@@ -1,14 +1,14 @@
 import { useState } from "react";
 import "./checkout.css";
-// import { useAddress } from "../../Context/address-context";
+import { useAddress } from "../../Context/address-context";
 import { AddressModal } from "../addressModal/AddressModal";
 import { OrderDetails } from "./OrderDetails";
 
 function Checkout() {
-	// const {
-	// 	addressState: { addresses, selectedAddrId },
-	// 	dispatchAddress,
-	// } = useAddress();
+	const {
+		addressState: { addresses, selectedAddrId },
+		dispatchAddress,
+	} = useAddress();
 
 	const [showAddrModal, setShowAddrModal] = useState(false);
 
@@ -16,11 +16,9 @@ function Checkout() {
 		<div>
 			<section className="main-section checkout-container mt-32">
 				<div className="heading-3">Checkout</div>
-
 				<div className="checkout-wrapper">
 					<div className="checkout-address">
 						<div className="address-title title">Select Address</div>
-
 						<div className="address-list">
 							{addresses.length ? (
 								addresses.map((address) => (
@@ -36,7 +34,6 @@ function Checkout() {
 												})
 											}
 										/>
-
 										<div>
 											<div className="address-name">{address.name}</div>
 											<div>{address.street},</div>
@@ -54,7 +51,7 @@ function Checkout() {
 								<>
 									<p>No address available.</p>
 									{/* <p>
-										<Link className="btn-link" to={"/profile/addresses"}>
+										<Link className="btn-link" to={""}>
 											Add address
 										</Link>
 									</p> */}
