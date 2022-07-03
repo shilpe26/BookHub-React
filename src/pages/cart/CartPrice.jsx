@@ -9,10 +9,7 @@ function CartPrice() {
 	useEffect(() => {
 		if (cart_state.items.length !== 0) {
 			setTotalPrice(
-				cart_state.items.reduce(
-					(prev, curr) => prev + curr.price * curr.productCount,
-					0
-				)
+				cart_state.items.reduce((prev, curr) => prev + curr.price * curr.qty, 0)
 			);
 		} else {
 			setTotalPrice(0);

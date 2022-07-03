@@ -38,7 +38,7 @@ function CartProducts() {
 										>
 											-
 										</button>
-										<p>{item.productCount}</p>
+										<p>{item.qty}</p>
 										<button
 											className="item-quantity"
 											onClick={() => increaseQuantity(item._id)}
