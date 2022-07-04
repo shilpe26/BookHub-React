@@ -20,7 +20,7 @@ const AddressProvider = ({ children }) => {
 		initialState
 	);
 
-	const token = localStorage.getItem("userToken");
+	const token = localStorage.getItem("encodedToken");
 	const alert = useAlert();
 
 	useEffect(() => {
