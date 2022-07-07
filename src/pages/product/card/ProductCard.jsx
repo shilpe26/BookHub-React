@@ -12,7 +12,7 @@ function ProductCard({ product }) {
 	const { addToCart } = useCartServerCalls();
 
 	function wishlistHandler() {
-		const token = localStorage.getItem("userToken");
+		const token = localStorage.getItem("ecommToken");
 		if (token) {
 			addToWishlist({ ...product });
 		} else {
@@ -22,7 +22,7 @@ function ProductCard({ product }) {
 	}
 
 	function cartHandler() {
-		const token = localStorage.getItem("userToken");
+		const token = localStorage.getItem("ecommToken");
 		if (token) {
 			addToCart({ ...product });
 		} else {

@@ -1,56 +1,59 @@
-const initialUserObj = {
-	name: "",
-	street: "",
-	city: "",
-	state: "",
-	zipcode: "",
-	country: "",
-	mobile: "",
-};
-
-const initialState = {
-	addresses: [],
-	selectedAddrId: null,
-	formData: initialUserObj,
-	formError: {
-		zipcodeError: false,
-		mobileError: false,
-	},
-};
-
-const addressReducer = (state, { type, payload }) => {
-	switch (type) {
-		case "GET_ADDRESS":
-			return { ...state, addresses: payload, selectedAddrId: payload[0]._id };
-		case "SET_ADDRESS_ID":
-			return { ...state, selectedAddrId: payload };
-		case "SET_INPUT":
-			return {
-				...state,
-				formData: { ...state.formData, [payload.name]: payload.value },
+import {
+	getTask,
+	updateStorage,
+} from "../services/addressServices/updateStorage";
+export const addressReducer = (addressState, action) => {
+	switch (action.type) {
+		case "ADD-TASK": {
+			const updatedTasks = {
+				...addressState,
+				tasks: [...addressState.tasks, action.payload],
 			};
-		case "SET_DUMMY_ADDR":
-			return {
-				...state,
-				formData: payload,
+			updateStorage(updatedTasks.tasks);
+			return updatedTasks;
+		}
+		case "DELETE-TASK": {
+			const updatedTasks = {
+				...addressState,
+				tasks: addressState.tasks.filter((task) => task.id !== action.payload),
 			};
-		case "EDIT_INPUT":
-			return { ...state, formData: payload.data };
-		case "ZIPCODE_ERROR":
-			return {
-				...state,
-				formError: { ...state.formError, zipcodeError: payload.zipcodeError },
+			updateStorage(updatedTasks.tasks);
+			return updatedTasks;
+		}
+		case "EDIT-TASK": {
+			const updatedTasks = {
+				...addressState,
+				tasks: addressState.tasks.map((task) =>
+					task.id === action.payload.id
+						? {
+								...task,
+								name: action.payload.name,
+								street: action.payload.street,
+								city: action.payload.city,
+								zipcode: action.payload.zipcode,
+								state: action.payload.state,
+								country: action.payload.country,
+								mobile: action.payload.mobile,
+						  }
+						: task
+				),
 			};
-		case "MOBILE_ERROR":
-			return {
-				...state,
-				formError: { ...state.formError, mobileError: payload.mobileError },
+			updateStorage(updatedTasks.tasks);
+			return updatedTasks;
+		}
+		case "UPDATE-FROM-LOCALSTORAGE": {
+			const initalTask = getTask();
+			return { ...addressState, tasks: [...initalTask] };
+		}
+		case "SET_DUMMY_ADDR": {
+			const updatedTasks = {
+				...addressState,
+				tasks: [...addressState.tasks, action.payload],
 			};
-		case "RESET_FORM":
-			return { ...state, formData: payload };
+			updateStorage(updatedTasks.tasks);
+			return updatedTasks;
+		}
 		default:
-			return state;
+			return addressState;
 	}
 };
-
-export { addressReducer, initialState, initialUserObj };

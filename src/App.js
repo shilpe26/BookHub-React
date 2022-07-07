@@ -14,11 +14,14 @@ import Mockman from "mockman-js";
 import { NotFound } from "./pages/page_not_found/NotFound";
 import { ProductDetail } from "./pages/ProductDetail/ProductDetail";
 import "./styles/utility.css";
+import { useState } from "react";
 function App() {
+	const [search, setSearch] = useState("");
+
 	return (
 		<div className="App">
 			<div>
-				<Navbar />
+				<Navbar setSearch={setSearch} />
 			</div>
 			<div className="main-style">
 				<Routes>
@@ -47,7 +50,7 @@ function App() {
 							</RequiresAuth>
 						}
 					/>
-					<Route path="/Product" element={<Product />} />
+					<Route path="/Product" element={<Product search={search} />} />
 					<Route path="/Product/:productId" element={<ProductDetail />} />
 					<Route path="/checkout" element={<Checkout />} />
 					<Route

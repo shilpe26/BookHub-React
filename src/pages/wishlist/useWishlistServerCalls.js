@@ -4,7 +4,7 @@ import axios from "axios";
 import { useWishlist } from "./wishlist-context";
 
 function useWishlistServerCalls() {
-	const token = localStorage.getItem("userToken");
+	const token = localStorage.getItem("ecommToken");
 	const { wishlist_state, wishlist_dispatch } = useWishlist();
 	const alert = useAlert();
 

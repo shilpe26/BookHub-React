@@ -33,14 +33,14 @@ function CartProducts() {
 									<h3 className="publish-review">{item.rating} ⭐</h3>
 									<div className="cart-quntity">
 										<button
-											className="item-quantity"
+											className="item-quantity cursor"
 											onClick={() => decreaseQuantity(item._id)}
 										>
 											-
 										</button>
 										<p>{item.qty}</p>
 										<button
-											className="item-quantity"
+											className="item-quantity cursor"
 											onClick={() => increaseQuantity(item._id)}
 										>
 											+

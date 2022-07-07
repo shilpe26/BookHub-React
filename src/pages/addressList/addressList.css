@@ -1,49 +1,48 @@
-.address-modal .btn {
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
+.task-container {
+    background-color: var(--white-hover);
+    border-radius: 1.2rem;
+    margin: -2rem auto 1.2rem auto;
+    height: 65vh;
+    position: relative;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
-.address-container .add-address {
+.task-container::-webkit-scrollbar {
+    display: none;
+}
+
+.task-list-header {
+    position: sticky;
+    top: 0px;
+    background-color: var(--white-hover);
+}
+
+.task-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: space-between;
+    padding: 4px;
+    margin-bottom: 1.2rem;
+    color: var(--primary-gray);
+    box-shadow: 0 0 2px 1px var(--light-bg);
 }
 
-.address-container .address-list {
-    margin: 1rem 0;
-}
-
-.address-list .address {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--bg-secondary);
-}
-
-.address-list .address .name {
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.address-list .address>p {
-    font-size: 0.9rem;
-}
-
-.address-list .address-action {
+.task-item-btns {
     display: flex;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    column-gap: 1.2rem;
+    margin: auto 1.2rem;
 }
 
-.address-list .address-action .btn {
-    font-size: 0.8rem;
-    padding: 0.125rem 0.25rem;
+.fa-pen-to-square {
+    color: var(--yellow-color);
+    background-color: var(--white-hover);
+    font-size: 2rem;
 }
 
-.address-container .address-modal {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 3;
+.fa-trash-can {
+    color: var(--price-tag);
+    background-color: var(--white-hover);
+    font-size: 2rem;
 }

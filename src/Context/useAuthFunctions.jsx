@@ -20,12 +20,11 @@ function useAuthFunctions() {
 			const { encodedToken } = data;
 			if (status === 200) {
 				alert.show("Login Successfully", { type: "success" });
-				localStorage.setItem("userToken", encodedToken);
+				localStorage.setItem("ecommToken", encodedToken);
 				authDispatch({
 					type: "USER-DATA",
-					payload: { encodedToken },
+					payload: data,
 				});
-				authDispatch({ type: "RESET-FORM" });
 				navigate(location?.state?.from?.pathname || "/");
 			} else if (status === 401) {
 				authDispatch({ type: "ERROR", payload: "Invalid Credentials." });
@@ -62,12 +61,11 @@ function useAuthFunctions() {
 			});
 			const { encodedToken } = data;
 			if (status === 201) {
-				localStorage.setItem("userToken", encodedToken);
+				localStorage.setItem("ecommToken", encodedToken);
 				authDispatch({
 					type: "USER-DATA",
-					payload: { encodedToken },
+					payload: data,
 				});
-				authDispatch({ type: "RESET-FORM" });
 				navigate(location?.state?.from?.pathname || "/");
 			} else {
 				authDispatch({ type: "ERROR", payload: "Something Went Wrong." });

@@ -23,8 +23,9 @@ function Cart() {
 							<div className="text-container">
 								<h3 className="price-tag">Hey, it feels so light!</h3>
 								<h4 className="heading-primary">
-									There is nothing in your bag. Let's add some items.
+									There is nothing in your bag.
 								</h4>
+								<h4 className="heading-primary">Let's add some items.</h4>
 								<div className="buttons empty-cart-btn">
 									<Link to="/product">
 										<button className="empty-cart-btn">START SHOPPING</button>

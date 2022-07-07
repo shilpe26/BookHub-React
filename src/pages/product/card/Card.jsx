@@ -2,15 +2,23 @@ import React from "react";
 import { useProduct } from "../../filters/Product-context";
 import { ProductCard } from "./ProductCard";
 
-function Card({ drawerVisible, setDrawerVisible }) {
+function Card({ drawerVisible, setDrawerVisible, search }) {
 	const { filteredProducts } = useProduct();
 
+	const searchedProducts = filteredProducts.filter(
+		(product) =>
+			product.title.toLowerCase().includes(search.toLowerCase()) ||
+			product.author.toLowerCase().includes(search.toLowerCase()) ||
+			product.categoryName.toLowerCase().includes(search.toLowerCase())
+	);
 	return (
 		<section className="cards_for-book">
-			{filteredProducts.length === 0 ? (
+			{filteredProducts.length === 0 && searchedProducts.length === 0 ? (
 				<h3>Products Loading...</h3>
+			) : searchedProducts.length === 0 ? (
+				<p className="text-center mt-2 text-lg">No Results Found!</p>
 			) : (
-				filteredProducts.map((product) => (
+				searchedProducts.map((product) => (
 					<ProductCard product={product} key={product._id} />
 				))
 			)}

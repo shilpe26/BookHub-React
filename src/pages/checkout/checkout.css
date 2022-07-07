@@ -1,7 +1,5 @@
 .checkout-container .heading-3 {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: center;
+    font-size: 4rem;
 }
 
 .checkout-container .checkout-wrapper {
@@ -78,7 +76,7 @@
     width: initial;
     text-align: center;
     padding: 0.25rem 0;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: bold;
     border-bottom: 1px solid var(--bg-color);
 }
@@ -91,7 +89,7 @@
 .checkout-container .item {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-bottom: 0.25rem;
 }
 

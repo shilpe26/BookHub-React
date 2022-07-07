@@ -4,7 +4,7 @@ import { useAlert } from "react-alert";
 import axios from "axios";
 
 function useCartServerCalls() {
-	const token = localStorage.getItem("userToken");
+	const token = localStorage.getItem("ecommToken");
 	const { cart_state, cart_dispatch } = useCart();
 	const alert = useAlert();
 
