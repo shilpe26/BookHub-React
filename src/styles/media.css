@@ -23,6 +23,10 @@
         display: block;
     }
 
+    .icons {
+        gap: 0.3rem;
+    }
+
     .search-form {
         position: absolute;
         top: -115%;

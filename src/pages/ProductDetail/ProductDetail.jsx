@@ -15,7 +15,7 @@ function ProductDetail() {
 		return filteredProducts.find((element) => element._id === productId);
 	};
 	const product = getProduct();
-	const { title, author, inStock, rating, productImage, price } = product;
+	const { title, author, rating, productImage, price } = product;
 
 	return (
 		<div>

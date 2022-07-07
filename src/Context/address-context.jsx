@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { addressReducer } from "../reducer/addressReducer";
 
 const initialTaskData = {

@@ -55,13 +55,13 @@ function OrderDetails() {
 			description: "Thank you for shopping with us",
 			handler: async function (response) {
 				const orderId = uuid().toString().split("-")[0];
-				const orderData = {
-					products: [...cart_state],
-					amount: totalPrice,
-					paymentId: response.razorpay_payment_id,
-					orderId,
-					// delivery: currentAddress,
-				};
+				// const orderData = {
+				// 	products: [...cart_state],
+				// 	amount: totalPrice,
+				// 	paymentId: response.razorpay_payment_id,
+				// 	orderId,
+				// 	// delivery: currentAddress,
+				// };
 			},
 
 			// prefill: {
