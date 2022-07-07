@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAlert } from "react-alert";
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 import { useCart } from "../cart/cart-context";
 import "./checkout.css";
 
@@ -54,7 +54,7 @@ function OrderDetails() {
 			name: "BoOkHuB",
 			description: "Thank you for shopping with us",
 			handler: async function (response) {
-				const orderId = uuid().toString().split("-")[0];
+				// const orderId = uuid().toString().split("-")[0];
 				// const orderData = {
 				// 	products: [...cart_state],
 				// 	amount: totalPrice,
