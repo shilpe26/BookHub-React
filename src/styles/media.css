@@ -146,15 +146,17 @@
         height: 34rem;
         margin-left: 3rem;
     }
+
     .img1.single-page-pimage {
         padding: 1rem;
         height: 37rem;
-      }
-      .center3.sp-page-image {
+    }
+
+    .center3.sp-page-image {
         width: 58%;
         padding: 1rem;
         height: 38.5rem;
-      }
+    }
 
     .signUp-btn-bookhub {
         font-size: 1.2rem;
@@ -166,6 +168,15 @@
 
     .cart-items-fix {
         margin-top: 25rem;
+    }
+
+    .task-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .order-details {
+        height: fit-content;
     }
 }
 
