@@ -61,6 +61,7 @@ function useCartServerCalls() {
 				type: "REMOVE-FROM-CART",
 				payload: response.data.cart,
 			});
+			alert.show("Removed from Cart", { type: "success" });
 		} catch (err) {
 			alert.show("Server Error: Cannot be removed!", { type: "error" });
 		}
