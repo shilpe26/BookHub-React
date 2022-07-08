@@ -23,8 +23,8 @@
         display: block;
     }
 
-    .icons {
-        gap: 0.3rem;
+    div.icons {
+        gap: 0.4rem;
     }
 
     .search-form {
@@ -62,7 +62,7 @@
 
     .deal-image {
         margin-left: 12rem;
-        height: 40vh;
+        height: 35vh;
     }
 
 
@@ -181,6 +181,22 @@
 
     .order-details {
         height: fit-content;
+    }
+
+    h1.productId {
+        margin-top: 16rem;
+    }
+
+    h1.first {
+        margin-top: 16rem;
+    }
+
+    h2.first {
+        margin-top: 16rem;
+    }
+
+    div.input-group input {
+        height: 4vh;
     }
 }
 

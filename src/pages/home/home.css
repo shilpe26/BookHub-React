@@ -137,7 +137,7 @@
 }
 
 .card-vertical:hover {
-    box-shadow: var(--bg-color) 0px 19px 43px;
+    box-shadow: var(--light-bg) 0px 19px 43px;
     transform: translate3d(0px, -1px, 0px);
 }
 

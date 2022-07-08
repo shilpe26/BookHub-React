@@ -583,6 +583,10 @@
     font-size: 1.5rem;
     line-height: 2rem;
 }
+.text-smd{
+    font-size: 2.2rem;
+    line-height: 2.5rem;
+}
 .text-xmd{
     font-size: 2.5rem;
     line-height: 2.2rem;

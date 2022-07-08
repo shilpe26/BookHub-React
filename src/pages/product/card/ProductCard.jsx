@@ -58,7 +58,7 @@ function ProductCard({ product }) {
 			</div>
 			{!inStock && (
 				<div className="overlay-text">
-					<h1>Out of Stock</h1>
+					<h1>Out of Stock </h1>
 				</div>
 			)}
 		</div>

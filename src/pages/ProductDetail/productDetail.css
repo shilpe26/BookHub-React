@@ -1,4 +1,4 @@
-.productId{
+.productId {
     margin-top: 12rem;
     font-size: 4rem;
     text-align: center;
@@ -23,24 +23,16 @@
 
 .single-page-pimage {
     width: 300px;
-height: 282px;
+    height: 282px;
 }
 
 .head2 {
-    font-size: 2.5rem;
-    padding: 1rem;
     color: var(--primary-gray);
-    font-weight: 600;
-}
-
-.head3 {
-    padding: 1rem;
 }
 
 .publish-review {
-    font-size: 1.5rem;
     color: var(--bg-color);
-    padding: 1rem;
+    text-align: justify;
 }
 
 .cart-space {
@@ -66,6 +58,8 @@ height: 282px;
 .sp-page-image {
     width: 25%;
     padding: 1rem;
+    height: 30rem;
+    margin-top: 0px;
 }
 
 .first {

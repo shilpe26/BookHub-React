@@ -36,14 +36,14 @@ function ProductDetail() {
 
 				<div className="center3 product-description">
 					<div className="container3-3">
-						<div className="card">
+						<div className="card p-2">
 							<div className="card">
-								<h2 className="head2">{title}</h2>
-								<h3 className="head3">by {author}</h3>
+								<h2 className="head2 text-xmd p-2 font-semibold">{title}</h2>
+								<h3 className="head3 p-2">by {author}</h3>
 								<h3 className="price-tag">$ {price}</h3>
 								<h3 className="price-tag">{rating}⭐</h3>
 
-								<h3 className="publish-review">
+								<h3 className="publish-review text-md">
 									<p>
 										Lorem ipsum dolor sit amet consectetur, adipisicing elit.
 										Dolor, autem, amet veritatis deserunt odit officiis qui
