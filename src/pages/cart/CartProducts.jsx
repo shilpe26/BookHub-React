@@ -35,6 +35,7 @@ function CartProducts() {
 										<button
 											className="item-quantity cursor"
 											onClick={() => decreaseQuantity(item._id)}
+											disabled={item.qty === 1}
 										>
 											-
 										</button>
