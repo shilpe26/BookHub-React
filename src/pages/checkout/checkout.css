@@ -11,48 +11,6 @@
     margin: 4rem auto;
 }
 
-.checkout-address .address-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    border: 2px dashed var(--bg-color);
-    padding: 1rem;
-}
-
-.checkout-address .address {
-    display: flex;
-    align-items: baseline;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-    border-radius: 4px;
-    border: 1px solid var(--bg-color);
-}
-
-.checkout-address .address .address-name {
-    font-weight: bold;
-    font-size: 1rem;
-}
-
-.checkout-address .add-address {
-    margin: 1rem 0;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
-}
-
-.checkout-container .address-modal {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 3;
-}
-
 .checkout-address input[type="radio"] {
     accent-color: var(--bg-color);
 }

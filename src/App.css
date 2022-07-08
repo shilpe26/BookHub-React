@@ -2,7 +2,7 @@
 /* My Component Library link  */
 @import url("https://rebalance-ui.netlify.app/all_component.css");
 /* All CSS Links */
-@import url("../src/styles/navbar.css"); 
+@import url("../src/styles/navbar.css");
 @import url("../src/styles/footer.css");
 @import url("../src/styles/reset.css");
 @import url("../src/styles/media.css");
@@ -17,12 +17,12 @@
 @import url("./pages/ProductDetail/productDetail.css");
 @import url("../src/pages/checkout/checkout.css");
 
-
-.App{
+.App {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-.main-style{
+
+.main-style {
     flex-grow: 1;
 }

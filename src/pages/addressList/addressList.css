@@ -36,6 +36,10 @@
     padding: 0 1rem;
 }
 
+.fa-circle-plus {
+    background-color: var(--white-hover);
+}
+
 .fa-pen-to-square {
     color: var(--yellow-color);
     background-color: var(--white-hover);
