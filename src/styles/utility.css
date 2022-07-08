@@ -565,6 +565,9 @@
 .text{
     text-align: center;
 }
+.text-justify{
+    text-align: justify;
+}
 /* font-size */
 
 .text-xs{

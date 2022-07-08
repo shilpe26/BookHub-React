@@ -198,6 +198,11 @@
     div.input-group input {
         height: 4vh;
     }
+    /* div.checkout-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
 }
 
 @media (max-width:450px) {

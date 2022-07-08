@@ -43,7 +43,7 @@ function ProductDetail() {
 								<h3 className="price-tag">$ {price}</h3>
 								<h3 className="price-tag">{rating}⭐</h3>
 
-								<h3 className="publish-review text-md">
+								<h3 className="publish-review text-md text-justify">
 									<p>
 										Lorem ipsum dolor sit amet consectetur, adipisicing elit.
 										Dolor, autem, amet veritatis deserunt odit officiis qui

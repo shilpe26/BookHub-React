@@ -21,18 +21,19 @@
 
 .task-item {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
-    padding: 4px;
+    gap: 0.5rem;
+    padding: 4px 1rem;
     margin-bottom: 1.2rem;
     color: var(--primary-gray);
     box-shadow: 0 0 2px 1px var(--light-bg);
 }
 
 .task-item-btns {
-    display: flex;
-    column-gap: 1.2rem;
-    margin: auto 1.2rem;
+    align-self: flex-end;
+    padding: 0 1rem;
 }
 
 .fa-pen-to-square {
