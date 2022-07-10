@@ -16,7 +16,9 @@
 .task-list-header {
     position: sticky;
     top: 0px;
-    background-color: var(--white-hover);
+    background-color: var(--alert-hover);
+    height: 7vh;
+    padding: 1rem;
 }
 
 .task-item {
@@ -37,7 +39,7 @@
 }
 
 .fa-circle-plus {
-    background-color: var(--white-hover);
+    background-color: var(--alert-hover);
 }
 
 .fa-pen-to-square {

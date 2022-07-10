@@ -179,6 +179,10 @@
         flex-direction: column;
     }
 
+    div.task-list-header {
+        height: 5vh;
+    }
+
     .order-details {
         height: fit-content;
     }
