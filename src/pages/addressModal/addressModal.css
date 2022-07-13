@@ -27,6 +27,7 @@
 
 .dummy-btn {
   padding: 0.6rem 4rem;
+  margin-top: 4px;
 }
 
 input[type="text"] {

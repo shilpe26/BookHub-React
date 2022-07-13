@@ -19,20 +19,19 @@
         display: block;
     }
 
-    .icons #search-btn {
-        display: block;
-    }
-
     div.icons {
-        gap: 0.4rem;
+        gap: 1rem;
     }
 
     .search-form {
         position: absolute;
-        top: -115%;
-        right: 2rem;
-        width: 90%;
+        top: 12rem;
+        width: 75%;
         box-shadow: var(--box-shadow);
+        height: 3rem;
+    }
+    .search-icon{
+        font-size: 2rem;
     }
 
     .header .header-bookhub {

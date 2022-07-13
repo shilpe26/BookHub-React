@@ -51,7 +51,7 @@ function Wishlist() {
 										onClick={() => deleteFromWishlist(item._id)}
 										className="button-close-wishlist"
 									>
-										<i class="fa-solid fa-xmark"></i>
+										<i className="fa-solid fa-xmark"></i>
 									</button>
 									<div className="image-container badge-container">
 										<img

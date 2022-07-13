@@ -26,7 +26,6 @@ section {
 .heading span {
     font-size: 3rem;
     padding: .5rem 2rem;
-    color: var(--black);
     background: var(--white-hover);
     border: 2px solid var(--secondary-gray);
     border-radius: 6px;
@@ -38,9 +37,8 @@ section {
 }
 
 .btn {
-    margin-top: 1rem;
     display: inline-block;
-    padding: .9rem 3rem;
+    padding: 4px 4px;
     border-radius: .5rem;
     color: black;
     background: var(--yellow-color);
@@ -74,7 +72,7 @@ section {
 
 .search-form {
     width: 50rem;
-    height: 5rem;
+    height: 4.5rem;
     border: var(--border);
     overflow: hidden;
     background: var(--white-hover);
@@ -92,19 +90,17 @@ section {
     height: 100%;
     width: 100%;
     text-transform: none;
-    color: var(--black);
 }
 
 .search-icon {
     font-size: 2.5rem;
     padding-right: 1.5rem;
-    color: var(--black);
     cursor: pointer;
     margin-top: 0rem;
 }
 
 .search-icon:hover {
-    color: var(--secondary-gray);
+    color: var(--dark-color);
 }
 
 .header-icons {

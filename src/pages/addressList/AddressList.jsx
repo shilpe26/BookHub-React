@@ -16,7 +16,6 @@ function AddressList({ setShowForm, setIsEditing }) {
 			<div className="task-list px-8 py-4">
 				{tasks.map((task) => (
 					<div key={task.id} className="task-item">
-						{/* <Link to={`/task/${task.id}`}> */}
 						<h3>
 							<span className="text-md">{task.name}</span>
 						</h3>
@@ -34,7 +33,6 @@ function AddressList({ setShowForm, setIsEditing }) {
 						<h3>
 							<span className="text-md">{task.mobile}</span>
 						</h3>
-						{/* </Link> */}
 						<div className="task-item-btns">
 							<button
 								onClick={() => {
@@ -57,7 +55,7 @@ function AddressList({ setShowForm, setIsEditing }) {
 							</button>
 						</div>
 					</div>
-				))}
+				))}{" "}
 			</div>
 		</div>
 	);

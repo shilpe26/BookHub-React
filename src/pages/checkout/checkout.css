@@ -27,7 +27,7 @@
 }
 
 .checkout-container .order-items-wrapper {
-    padding: 0.5rem;
+    padding: 2rem;
 }
 
 .checkout-container .title {
@@ -71,7 +71,7 @@
 .checkout-container .place-order {
     width: -webkit-fill-available;
     margin: 1rem 0.5rem;
-    font-size: 1.1rem;
+    font-size: 1.7rem;
 }
 
 .add-address-btn {
