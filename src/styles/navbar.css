@@ -48,7 +48,7 @@ section {
 }
 
 .btn:hover {
-    background-color:var(--white-hover);
+    background-color: var(--white-hover);
 }
 
 .header-bookhub {
@@ -80,7 +80,8 @@ section {
     align-items: center;
     border-radius: .5rem;
 }
-#search-btn{
+
+#search-btn {
     display: none;
 }
 
@@ -123,7 +124,7 @@ section {
     background-color: var(--yellow-color);
     transform: translate(25%, -50%);
     margin-left: 1rem;
-  }
+}
 
 .header-icons:hover {
     color: var(--secondary-gray);

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useAlert } from "react-alert";
-// import { v4 as uuid } from "uuid";
 import { useCart } from "../cart/cart-context";
 import "./checkout.css";
 
@@ -53,22 +52,6 @@ function OrderDetails() {
 			currency: "INR",
 			name: "BoOkHuB",
 			description: "Thank you for shopping with us",
-			handler: async function (response) {
-				// const orderId = uuid().toString().split("-")[0];
-				// const orderData = {
-				// 	products: [...cart_state],
-				// 	amount: totalPrice,
-				// 	paymentId: response.razorpay_payment_id,
-				// 	orderId,
-				// 	// delivery: currentAddress,
-				// };
-			},
-
-			// prefill: {
-			// 	name: `${user.firstName} ${user.lastName}`,
-			// 	email: user.email,
-			// 	contact: "9140918899",
-			// },
 		};
 
 		const paymentObject = new window.Razorpay(options);
@@ -79,17 +62,7 @@ function OrderDetails() {
 		<div className="order-details">
 			<div className="title">Order Summary</div>
 
-			<div className="order-items-wrapper order-items">
-				{/* {cart_state.map((cartItem) => (
-          <div key={cartItem.id} className="item">
-            <div>
-              {cartItem.title} (${cartItem.price} x {cartItem.qty})
-            </div>
-
-            <div>${cartItem.price * cartItem.qty}</div>
-          </div>
-        ))} */}
-			</div>
+			<div className="order-items-wrapper order-items"></div>
 
 			<div className="title">Price Details</div>
 

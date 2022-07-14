@@ -30,7 +30,8 @@
         box-shadow: var(--box-shadow);
         height: 3rem;
     }
-    .search-icon{
+
+    .search-icon {
         font-size: 2rem;
     }
 
