@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useAlert } from "react-alert";
 import { useCart } from "../cart/cart-context";
+import { useTask } from "../../Context/address-context";
 import "./checkout.css";
 
 function OrderDetails() {
 	const [totalPrice, setTotalPrice] = useState(0);
 	const alert = useAlert();
 	const { cart_state } = useCart();
+	const { addressState } = useTask();
+	const { tasks } = addressState;
 
 	useEffect(() => {
 		if (cart_state.items.length !== 0) {
@@ -62,7 +65,19 @@ function OrderDetails() {
 		<div className="order-details">
 			<div className="title">Order Summary</div>
 
-			<div className="order-items-wrapper order-items"></div>
+			<div className="order-items-wrapper order-items">
+				{cart_state.items.map((item) => (
+					<div key={item._id}>
+						<div className="card text-left">
+							<li className="text-md">
+								<h2 className="head2">{item.title}</h2>
+							</li>
+							<h3 className="head3">by {item.author}</h3>
+							<h4 className="head3 text-base">Quantity-{item.qty}</h4>
+						</div>
+					</div>
+				))}
+			</div>
 
 			<div className="title">Price Details</div>
 
@@ -90,7 +105,29 @@ function OrderDetails() {
 
 			<div className="title">Deliver To</div>
 
-			<div className="order-items-wrapper addr-item"></div>
+			<div className="order-items-wrapper addr-item">
+				{tasks.map((task) => (
+					<div key={task.id} className="task-item">
+						<h3>
+							<span className="text-md">{task.name}</span>
+						</h3>
+						<h3>
+							<span className="text-md">{task.street} </span>
+						</h3>
+						<h3>
+							<span className="text-md">{task.city} - </span>
+							<span className="text-md">{task.zipcode}</span>
+						</h3>
+						<h3>
+							<span className="text-md">{task.state} , </span>
+							<span className="text-md">{task.country}</span>
+						</h3>
+						<h3>
+							<span className="text-md">{task.mobile}</span>
+						</h3>
+					</div>
+				))}
+			</div>
 
 			<button className="btn btn-primary place-order" onClick={displayRazorpay}>
 				Place Order

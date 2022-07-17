@@ -3,6 +3,7 @@ import { useAddTask } from "../../services/addressServices/useAddTask";
 import { useEditTask } from "../../services/addressServices/useEditTask";
 import "./addressModal.css";
 import { useTask } from "../../Context/address-context";
+
 const dummyAddress = {
 	name: "Shilpe Saxena",
 	street: "35, Preetam Nagar",
@@ -56,7 +57,7 @@ function AddressModal({ setShowForm, isEditing, setIsEditing }) {
 			setError((err) => ({
 				...err,
 				value: true,
-				msg: "street must be atleast 12 characters long !",
+				msg: "street must be atleast 10 characters long !",
 			}));
 		} else if (formData.city.trim().length < 1) {
 			setError((err) => ({
@@ -105,7 +106,7 @@ function AddressModal({ setShowForm, isEditing, setIsEditing }) {
 	return (
 		<div className="modal-form-container">
 			<div className="form-modal p-8 rounded">
-				<form onSubmit={addTaskHandler} className="flex flex-col">
+				<form onSubmit={(e) => addTaskHandler(e)} className="flex flex-col">
 					<input
 						className="add-input"
 						type="text"
@@ -136,7 +137,7 @@ function AddressModal({ setShowForm, isEditing, setIsEditing }) {
 						className="add-input"
 						type="text"
 						required
-						placeholder="Time in city"
+						placeholder="Add city"
 						value={formData.city}
 						onChange={(e) =>
 							setFormData((val) => ({ ...val, city: e.target.value }))

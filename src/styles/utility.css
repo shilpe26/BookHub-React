@@ -568,6 +568,9 @@
 .text-justify{
     text-align: justify;
 }
+.text-left{
+    text-align: left;
+}
 /* font-size */
 
 .text-xs{
