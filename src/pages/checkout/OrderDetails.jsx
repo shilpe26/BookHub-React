@@ -50,12 +50,13 @@ function OrderDetails() {
 		}
 
 		const options = {
-			key: "rzp_test_SP206ka3zuV4SX",
+			key: "rzp_test_NBdKHtPHfFDUm5",
 			amount: totalPrice * 100,
-			currency: "INR",
+			currency: "USD",
 			name: "BoOkHuB",
 			description: "Thank you for shopping with us",
 		};
+		console.log(totalPrice);
 
 		const paymentObject = new window.Razorpay(options);
 		paymentObject.open();
