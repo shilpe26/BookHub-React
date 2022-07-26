@@ -37,5 +37,8 @@ An E-Commerece Application maded with `React.js` where you can read books of you
 # Single Product Page
 ![single product page ](https://user-images.githubusercontent.com/56014170/161629599-2aa3d020-d753-499d-9765-8df2d499cbef.gif)
 
+# Checkout Page
+![payment](https://user-images.githubusercontent.com/56014170/179416736-129fd3fe-5682-4a46-9d41-13e94dc428cf.gif)
+
 🎯It is fully responsive in nature and fulfills varoius accessibilities parameters.
 🎯Made with React JS library⭐
