@@ -29,7 +29,8 @@ function useCartServerCalls() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [token]);
 
-	const addToCart = async (product) => {
+	const addToCart = async (product, setActivateBtn) => {
+		setActivateBtn(true);
 		try {
 			if (cart_state.items.find((item) => item._id === product._id)) {
 				alert.show("Already In Cart", { type: "info" });
@@ -49,6 +50,8 @@ function useCartServerCalls() {
 			}
 		} catch (err) {
 			alert.show("Server Error: Cannot be Added!", { type: "error" });
+		} finally {
+			setActivateBtn(false);
 		}
 	};
 
@@ -83,7 +86,8 @@ function useCartServerCalls() {
 		}
 	};
 
-	const decreaseQuantity = async (productId) => {
+	const decreaseQuantity = async (productId, setActivateBtn) => {
+		setActivateBtn(true);
 		try {
 			const response = await axios.post(
 				`/api/user/cart/${productId}`,
@@ -96,6 +100,8 @@ function useCartServerCalls() {
 			});
 		} catch (err) {
 			alert.show("Server Error: Can't decrease quantity!", { type: "error" });
+		} finally {
+			setActivateBtn(false);
 		}
 	};
 	return { addToCart, deleteFromCart, increaseQuantity, decreaseQuantity };

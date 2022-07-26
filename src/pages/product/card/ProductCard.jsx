@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useWishlistServerCalls } from "../../wishlist/useWishlistServerCalls";
 import { useCartServerCalls } from "../../cart/useCartServerCalls";
 import { Link, useNavigate } from "react-router-dom";
@@ -10,11 +10,12 @@ function ProductCard({ product }) {
 	const navigate = useNavigate();
 	const { addToWishlist } = useWishlistServerCalls();
 	const { addToCart } = useCartServerCalls();
+	const [activateBtn, setActivateBtn] = useState(false);
 
 	function wishlistHandler() {
 		const token = localStorage.getItem("ecommToken");
 		if (token) {
-			addToWishlist({ ...product });
+			addToWishlist({ ...product }, setActivateBtn);
 		} else {
 			navigate("/login");
 			alert.show("Please Login First!", { type: "info" });
@@ -24,7 +25,7 @@ function ProductCard({ product }) {
 	function cartHandler() {
 		const token = localStorage.getItem("ecommToken");
 		if (token) {
-			addToCart({ ...product });
+			addToCart({ ...product }, setActivateBtn);
 		} else {
 			navigate("/login");
 			alert.show("Please Login First!", { type: "info" });
@@ -48,10 +49,14 @@ function ProductCard({ product }) {
 				<p className="sub-heading">by {author}</p>
 				<h3 className="price-tag">{rating}⭐</h3>
 				<div className="buttons">
-					<button onClick={wishlistHandler} type="button">
+					<button
+						disabled={activateBtn}
+						onClick={wishlistHandler}
+						type="button"
+					>
 						<i className="fas fa-heart"></i>Wishlist
 					</button>
-					<button onClick={cartHandler} type="button">
+					<button disabled={activateBtn} onClick={cartHandler} type="button">
 						Add to Cart
 					</button>
 				</div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import "./productDetail.css";
 import { useProduct } from "../filters/Product-context";
@@ -16,6 +16,7 @@ function ProductDetail() {
 	};
 	const product = getProduct();
 	const { title, author, rating, productImage, price } = product;
+	const [activateBtn, setActivateBtn] = useState(false);
 
 	return (
 		<div>
@@ -42,7 +43,6 @@ function ProductDetail() {
 								<h3 className="head3 p-2">by {author}</h3>
 								<h3 className="price-tag">$ {price}</h3>
 								<h3 className="price-tag">{rating}⭐</h3>
-
 								<h3 className="publish-review text-md text-justify">
 									<p>
 										Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -53,14 +53,18 @@ function ProductDetail() {
 								</h3>
 								<div className="buttons">
 									<button
-										onClick={() => addToWishlist({ ...product })}
+										disabled={activateBtn}
+										onClick={() =>
+											addToWishlist({ ...product }, setActivateBtn)
+										}
 										value="wishlist"
 										type="button"
 									>
 										<i className="fas fa-heart"></i>Wishlist
 									</button>
 									<button
-										onClick={() => addToCart({ ...product })}
+										disabled={activateBtn}
+										onClick={() => addToCart({ ...product }, setActivateBtn)}
 										value="cart"
 										type="button"
 									>

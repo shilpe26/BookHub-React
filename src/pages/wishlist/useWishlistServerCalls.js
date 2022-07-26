@@ -29,7 +29,8 @@ function useWishlistServerCalls() {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [token]);
 
-	const addToWishlist = async (product) => {
+	const addToWishlist = async (product, setActivateBtn) => {
+		setActivateBtn(true);
 		try {
 			if (wishlist_state.items.find((item) => item._id === product._id)) {
 				alert.show("Already In Cart", { type: "info" });
@@ -49,6 +50,8 @@ function useWishlistServerCalls() {
 			}
 		} catch (err) {
 			alert.show("Server Error: Cannot be Added!", { type: "error" });
+		} finally {
+			setActivateBtn(false);
 		}
 	};
 

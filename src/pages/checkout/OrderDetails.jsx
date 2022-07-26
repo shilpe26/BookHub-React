@@ -51,7 +51,7 @@ function OrderDetails() {
 
 		const options = {
 			key: "rzp_test_NBdKHtPHfFDUm5",
-			amount: totalPrice * 100,
+			amount: Math.round(totalPrice * 100),
 			currency: "USD",
 			name: "BoOkHuB",
 			description: "Thank you for shopping with us",

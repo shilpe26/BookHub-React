@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCart } from "../cart/cart-context";
 import { useCartServerCalls } from "./useCartServerCalls";
 import { useWishlistServerCalls } from "../wishlist/useWishlistServerCalls";
@@ -8,6 +8,7 @@ function CartProducts() {
 	const { deleteFromCart, increaseQuantity, decreaseQuantity } =
 		useCartServerCalls();
 	const { addToWishlist } = useWishlistServerCalls();
+	const [activateBtn, setActivateBtn] = useState(false);
 
 	function wishlistHandler(item) {
 		addToWishlist({ ...item });
@@ -34,8 +35,8 @@ function CartProducts() {
 									<div className="cart-quntity">
 										<button
 											className="item-quantity cursor"
-											onClick={() => decreaseQuantity(item._id)}
-											disabled={item.qty === 1}
+											onClick={() => decreaseQuantity(item._id, setActivateBtn)}
+											disabled={item.qty === 1 || activateBtn}
 										>
 											-
 										</button>
