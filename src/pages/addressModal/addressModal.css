@@ -50,6 +50,7 @@ select[type="text"] {
   border: solid 2px var(--bg-color);
   padding: 9px;
   margin-top: 4px;
+  background-color: var(--white-hover);
 }
 
 .add-btn {

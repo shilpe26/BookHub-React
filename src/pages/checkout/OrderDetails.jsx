@@ -52,7 +52,7 @@ function OrderDetails({ selectedAddress }) {
 			}
 
 			const options = {
-				key: "rzp_test_NBdKHtPHfFDUm5",
+				key: "rzp_test_wsMiQbHkdOwiFs",
 				amount: Math.round(totalPrice * 100),
 				currency: "USD",
 				name: "BoOkHuB",
@@ -75,11 +75,9 @@ function OrderDetails({ selectedAddress }) {
 				{cart_state.items.map((item) => (
 					<div key={item._id}>
 						<div className="card text-left">
-							<li className="text-md">
-								<h2 className="head2">{item.title}</h2>
-							</li>
+							<h2 className="head2">{item.title}</h2>
 							<h4 className="item-head3 ml-4 text-md">Qty: {item.qty}</h4>
-							<h4 className="ml-4 text-md">Price: $ {totalPrice.toFixed(2)}</h4>
+							<h4 className="ml-4 text-md">Price: $ {item.price}</h4>
 						</div>
 					</div>
 				))}
