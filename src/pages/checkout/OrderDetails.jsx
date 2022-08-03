@@ -38,7 +38,7 @@ function OrderDetails({ selectedAddress }) {
 
 	const displayRazorpay = async () => {
 		if (selectedAddress === undefined) {
-			alert.show("Please Select or Add an Address", { type: "info" });
+			alert.show("Please Add an Address", { type: "info" });
 		} else {
 			const res = await loadScript(
 				"https://checkout.razorpay.com/v1/checkout.js"
