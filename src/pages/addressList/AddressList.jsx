@@ -13,6 +13,7 @@ function AddressList({ setShowForm, setIsEditing, setSelectAddress }) {
 					<i className="text-smd cursor fa-solid fa-circle-plus"></i>
 				</button>
 			</div>
+
 			<div className="task-list px-8 py-4">
 				{tasks.map((task) => (
 					<div

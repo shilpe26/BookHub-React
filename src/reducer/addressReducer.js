@@ -2,6 +2,8 @@ import {
 	getTask,
 	updateStorage,
 } from "../services/addressServices/updateStorage";
+import { v4 as uuid } from "uuid";
+
 export const addressReducer = (addressState, action) => {
 	switch (action.type) {
 		case "ADD-TASK": {
@@ -48,7 +50,19 @@ export const addressReducer = (addressState, action) => {
 		case "SET_DUMMY_ADDR": {
 			const updatedTasks = {
 				...addressState,
-				tasks: [...addressState.tasks, action.payload],
+				tasks: [
+					...addressState.tasks,
+					{
+						id: uuid(),
+						name: "Shilpe Saxena",
+						street: "35, Preetam Nagar",
+						city: "Prayagraj",
+						state: "UP",
+						zipcode: "211001",
+						country: "India",
+						mobile: "9140915569",
+					},
+				],
 			};
 			updateStorage(updatedTasks.tasks);
 			return updatedTasks;
