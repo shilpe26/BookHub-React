@@ -2,7 +2,7 @@ import React from "react";
 import { useTask } from "../../Context/address-context";
 import "./addressList.css";
 
-function AddressList({ setShowForm, setIsEditing }) {
+function AddressList({ setShowForm, setIsEditing, setSelectAddress }) {
 	const { addressState, addressDispatch } = useTask();
 	const { tasks } = addressState;
 	return (
@@ -15,7 +15,11 @@ function AddressList({ setShowForm, setIsEditing }) {
 			</div>
 			<div className="task-list px-8 py-4">
 				{tasks.map((task) => (
-					<div key={task.id} className="task-item">
+					<div
+						key={task.id}
+						className="task-item cursor"
+						onClick={() => setSelectAddress(task)}
+					>
 						<h3>
 							<span className="text-md">{task.name}</span>
 						</h3>

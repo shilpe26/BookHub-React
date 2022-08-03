@@ -24,10 +24,11 @@
     padding: 0.5rem;
 }
 
-.overlay-text{
-    background-color: rgba(0,0,0,0.4);
+.overlay-text {
+    background-color: rgba(0, 0, 0, 0.4);
     width: 21rem;
     color: var(--white-hover);
     border-radius: 4px;
-    font-size: 1.7rem;
+    height: 42.6rem;
+    margin-top: -41.5rem;
 }

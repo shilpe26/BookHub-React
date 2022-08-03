@@ -6,7 +6,7 @@ import { OrderDetails } from "./OrderDetails";
 function Checkout() {
 	const [showForm, setShowForm] = useState(false);
 	const [isEditing, setIsEditing] = useState({ value: false, data: {} });
-
+	const [selectedAddress, setSelectAddress] = useState();
 	return (
 		<div>
 			<section className="main-section checkout-container mt-32">
@@ -16,6 +16,7 @@ function Checkout() {
 						<AddressList
 							setShowForm={setShowForm}
 							setIsEditing={setIsEditing}
+							setSelectAddress={setSelectAddress}
 						/>
 						{showForm && (
 							<AddressModal
@@ -26,7 +27,7 @@ function Checkout() {
 						)}
 					</div>
 
-					<OrderDetails />
+					<OrderDetails selectedAddress={selectedAddress} />
 				</div>
 			</section>
 		</div>

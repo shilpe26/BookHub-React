@@ -25,6 +25,11 @@
     margin-bottom: 1rem;
 }
 
+.filter label {
+    gap: 1rem;
+    display: flex;
+}
+
 .filter-header {
     display: flex;
     align-items: center;

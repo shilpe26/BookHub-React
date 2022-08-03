@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useAlert } from "react-alert";
+import { useAuth } from "../../Context/auth-context";
 import { useCart } from "../cart/cart-context";
-import { useTask } from "../../Context/address-context";
 import "./checkout.css";
 
-function OrderDetails() {
+function OrderDetails({ selectedAddress }) {
 	const [totalPrice, setTotalPrice] = useState(0);
 	const alert = useAlert();
 	const { cart_state } = useCart();
-	const { addressState } = useTask();
-	const { tasks } = addressState;
+	const { authState } = useAuth();
 
 	useEffect(() => {
 		if (cart_state.items.length !== 0) {
@@ -38,33 +37,39 @@ function OrderDetails() {
 	};
 
 	const displayRazorpay = async () => {
-		const res = await loadScript(
-			"https://checkout.razorpay.com/v1/checkout.js"
-		);
+		if (selectedAddress === undefined) {
+			alert.show("Please Select or Add an Address", { type: "info" });
+		} else {
+			const res = await loadScript(
+				"https://checkout.razorpay.com/v1/checkout.js"
+			);
 
-		if (!res) {
-			alert.show("Razorpay SDK failed to load, check your connection", {
-				type: "error",
-			});
-			return;
+			if (!res) {
+				alert.show("Razorpay SDK failed to load, check your connection", {
+					type: "error",
+				});
+				return;
+			}
+
+			const options = {
+				key: "rzp_test_NBdKHtPHfFDUm5",
+				amount: Math.round(totalPrice * 100),
+				currency: "USD",
+				name: "BoOkHuB",
+				description: "Thank you for shopping with us",
+				prefill: {
+					name: `${authState.firstName} ${authState.lastName}`,
+					email: authState.email,
+				},
+			};
+			const paymentObject = new window.Razorpay(options);
+			paymentObject.open();
 		}
-
-		const options = {
-			key: "rzp_test_NBdKHtPHfFDUm5",
-			amount: Math.round(totalPrice * 100),
-			currency: "USD",
-			name: "BoOkHuB",
-			description: "Thank you for shopping with us",
-		};
-		console.log(totalPrice);
-
-		const paymentObject = new window.Razorpay(options);
-		paymentObject.open();
 	};
 
 	return (
 		<div className="order-details">
-			<div className="title">Order Summary</div>
+			<div className="title text-smd">Order Summary</div>
 
 			<div className="order-items-wrapper order-items">
 				{cart_state.items.map((item) => (
@@ -73,19 +78,19 @@ function OrderDetails() {
 							<li className="text-md">
 								<h2 className="head2">{item.title}</h2>
 							</li>
-							<h3 className="head3">by {item.author}</h3>
-							<h4 className="head3 text-base">Quantity-{item.qty}</h4>
+							<h4 className="item-head3 ml-4 text-md">Qty: {item.qty}</h4>
+							<h4 className="ml-4 text-md">Price: $ {totalPrice}</h4>
 						</div>
 					</div>
 				))}
 			</div>
 
-			<div className="title">Price Details</div>
+			<div className="title text-smd">Price Details</div>
 
 			<div className="order-items-wrapper">
 				<div className="item">
 					<div>Total Price</div>
-					<div>$ {totalPrice.toFixed(2)}</div>
+					<div>${totalPrice.toFixed(2)}</div>
 				</div>
 
 				<div className="item">
@@ -99,36 +104,37 @@ function OrderDetails() {
 				</div>
 
 				<div className="item">
-					<div>Grand Total</div>
-					<div>${totalPrice.toFixed(2)}</div>
+					<div className="font-bold text-xmd">Grand Total</div>
+					<div className="grand-total font-bold text-xmd">
+						${totalPrice.toFixed(2)}
+					</div>
 				</div>
 			</div>
 
-			<div className="title">Deliver To</div>
-
-			<div className="order-items-wrapper addr-item">
-				{tasks.map((task) => (
-					<div key={task.id} className="task-item">
+			<div className="title text-smd">Deliver To</div>
+			{selectedAddress && (
+				<div className="order-items-wrapper addr-item">
+					<div className="task-item">
 						<h3>
-							<span className="text-md">{task.name}</span>
+							<span className="text-md">{selectedAddress.name}</span>
 						</h3>
 						<h3>
-							<span className="text-md">{task.street} </span>
+							<span className="text-md">{selectedAddress.street} </span>
 						</h3>
 						<h3>
-							<span className="text-md">{task.city} - </span>
-							<span className="text-md">{task.zipcode}</span>
+							<span className="text-md">{selectedAddress.city} - </span>
+							<span className="text-md">{selectedAddress.zipcode}</span>
 						</h3>
 						<h3>
-							<span className="text-md">{task.state} , </span>
-							<span className="text-md">{task.country}</span>
+							<span className="text-md">{selectedAddress.state} , </span>
+							<span className="text-md">{selectedAddress.country}</span>
 						</h3>
 						<h3>
-							<span className="text-md">{task.mobile}</span>
+							<span className="text-md">{selectedAddress.mobile}</span>
 						</h3>
 					</div>
-				))}
-			</div>
+				</div>
+			)}
 
 			<button className="btn btn-primary place-order" onClick={displayRazorpay}>
 				Place Order

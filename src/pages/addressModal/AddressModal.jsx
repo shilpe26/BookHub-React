@@ -11,7 +11,7 @@ const dummyAddress = {
 	state: "UP",
 	zipcode: "211001",
 	country: "India",
-	mobile: "9140918899",
+	mobile: "9140915569",
 };
 
 function AddressModal({ setShowForm, isEditing, setIsEditing }) {
@@ -148,10 +148,10 @@ function AddressModal({ setShowForm, isEditing, setIsEditing }) {
 					/>
 					<input
 						className="add-input"
-						type="text"
+						type="number"
 						required
 						maxLength="6"
-						placeholder="Add zipcode"
+						placeholder="PIN code 6 digit (0-9)"
 						value={formData.zipcode}
 						onChange={(e) =>
 							setFormData((val) => ({ ...val, zipcode: e.target.value }))
@@ -160,11 +160,11 @@ function AddressModal({ setShowForm, isEditing, setIsEditing }) {
 							setError((err) => ({ ...err, value: false, msg: "" }))
 						}
 					/>
-					<input
+					<select
 						className="add-input"
 						type="text"
 						required
-						placeholder="Add state"
+						placeholder="Add State"
 						value={formData.state}
 						onChange={(e) =>
 							setFormData((val) => ({ ...val, state: e.target.value }))
@@ -172,7 +172,52 @@ function AddressModal({ setShowForm, isEditing, setIsEditing }) {
 						onFocus={() =>
 							setError((err) => ({ ...err, value: false, msg: "" }))
 						}
-					/>
+					>
+						<option className="select-option" value="select">
+							Add State
+						</option>
+						<option value="Andhra Pradesh">Andhra Pradesh</option>
+						<option value="Andaman and Nicobar Islands">
+							Andaman and Nicobar Islands
+						</option>
+						<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+						<option value="Assam">Assam</option>
+						<option value="Bihar">Bihar</option>
+						<option value="Chandigarh">Chandigarh</option>
+						<option value="Chhattisgarh">Chhattisgarh</option>
+						<option value="Dadar and Nagar Haveli">
+							Dadar and Nagar Haveli
+						</option>
+						<option value="Daman and Diu">Daman and Diu</option>
+						<option value="Delhi">Delhi</option>
+						<option value="Lakshadweep">Lakshadweep</option>
+						<option value="Puducherry">Puducherry</option>
+						<option value="Goa">Goa</option>
+						<option value="Gujarat">Gujarat</option>
+						<option value="Haryana">Haryana</option>
+						<option value="Himachal Pradesh">Himachal Pradesh</option>
+						<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+						<option value="Jharkhand">Jharkhand</option>
+						<option value="Karnataka">Karnataka</option>
+						<option value="Kerala">Kerala</option>
+						<option value="Madhya Pradesh">Madhya Pradesh</option>
+						<option value="Maharashtra">Maharashtra</option>
+						<option value="Manipur">Manipur</option>
+						<option value="Meghalaya">Meghalaya</option>
+						<option value="Mizoram">Mizoram</option>
+						<option value="Nagaland">Nagaland</option>
+						<option value="Odisha">Odisha</option>
+						<option value="Punjab">Punjab</option>
+						<option value="Rajasthan">Rajasthan</option>
+						<option value="Sikkim">Sikkim</option>
+						<option value="Tamil Nadu">Tamil Nadu</option>
+						<option value="Telangana">Telangana</option>
+						<option value="Tripura">Tripura</option>
+						<option value="Uttar Pradesh">Uttar Pradesh</option>
+						<option value="Uttarakhand">Uttarakhand</option>
+						<option value="West Bengal">West Bengal</option>
+					</select>
+
 					<input
 						className="add-input"
 						type="text"
@@ -188,10 +233,10 @@ function AddressModal({ setShowForm, isEditing, setIsEditing }) {
 					/>
 					<input
 						className="add-input"
-						type="text"
+						type="number"
 						maxLength="10"
 						required
-						placeholder="Add mobile"
+						placeholder="Mobile number (10-digit without prefixes)"
 						value={formData.mobile}
 						onChange={(e) =>
 							setFormData((val) => ({ ...val, mobile: e.target.value }))
@@ -208,12 +253,13 @@ function AddressModal({ setShowForm, isEditing, setIsEditing }) {
 						<button
 							className="btn dummy-btn"
 							type="button"
-							onClick={() =>
+							onClick={() => {
 								addressDispatch({
 									type: "SET_DUMMY_ADDR",
 									payload: dummyAddress,
-								})
-							}
+								});
+								setShowForm((val) => !val);
+							}}
 						>
 							Fill with Dummy values
 						</button>

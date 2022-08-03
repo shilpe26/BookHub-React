@@ -5,7 +5,7 @@
 .checkout-container .checkout-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 10rem;
     max-width: 90%;
     width: 100%;
     margin: 4rem auto;
@@ -34,7 +34,6 @@
     width: initial;
     text-align: center;
     padding: 0.25rem 0;
-    font-size: 1.2rem;
     font-weight: bold;
     border-bottom: 1px solid var(--bg-color);
 }
@@ -47,16 +46,7 @@
 .checkout-container .item {
     display: flex;
     justify-content: space-between;
-    font-size: 1.2rem;
-    margin-bottom: 0.25rem;
-}
-
-.checkout-container .order-items .item {
-    gap: 0.5rem;
-}
-
-.checkout-container .addr-item {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
 }
 
 .checkout-container .btn-link {
@@ -74,14 +64,15 @@
     font-size: 1.7rem;
 }
 
-.add-address-btn {
-    width: -webkit-fill-available;
-    margin-left: 6rem;
-    font-size: 1.1rem;
-    margin-top: -3rem;
-}
-
 .checkout-container .btn-primary:disabled {
     background-color: var(--bg-color);
     cursor: not-allowed;
+}
+
+.item-head3 {
+    color: var(--dark-color);
+}
+
+.grand-total {
+    color: var(--price-tag);
 }
