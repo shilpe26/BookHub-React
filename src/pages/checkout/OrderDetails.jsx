@@ -79,7 +79,7 @@ function OrderDetails({ selectedAddress }) {
 								<h2 className="head2">{item.title}</h2>
 							</li>
 							<h4 className="item-head3 ml-4 text-md">Qty: {item.qty}</h4>
-							<h4 className="ml-4 text-md">Price: $ {totalPrice}</h4>
+							<h4 className="ml-4 text-md">Price: $ {totalPrice.toFixed(2)}</h4>
 						</div>
 					</div>
 				))}
