@@ -24,7 +24,7 @@ function Drawer({ drawerVisible }) {
 			</div>
 			<span className="hr_line-book"></span>
 			<div className="filter-category filter">
-				<h4>Category</h4>
+				<h3>Category</h3>
 				<label htmlFor="fiction">
 					<input
 						onChange={(e) =>
@@ -79,7 +79,11 @@ function Drawer({ drawerVisible }) {
 			</div>
 			<span className="hr_line-book"></span>
 			<div className="filter-price filter">
-				<h4>Price range</h4>
+				<h3>Price range</h3>
+				<div className="flex justify-between text-md font-thin">
+					<span>$ 0</span>
+					<span>$ 600</span>
+				</div>
 				<label htmlFor="include-outofstock">
 					<input
 						type="range"
@@ -94,6 +98,7 @@ function Drawer({ drawerVisible }) {
 							dispatch({ type: "PRICERANGE", payload: e.target.value })
 						}
 					/>
+
 					<datalist id="tickmarks">
 						<option value="0" label="0"></option>
 						<option value="100"></option>
@@ -107,7 +112,7 @@ function Drawer({ drawerVisible }) {
 			</div>
 			<span className="hr_line-book"></span>
 			<div className="filter-price filter">
-				<h4>Sort by</h4>
+				<h3>Sort by</h3>
 				<label htmlFor="low-price">
 					<input
 						onChange={() =>
@@ -137,7 +142,7 @@ function Drawer({ drawerVisible }) {
 			</div>
 			<span className="hr_line-book"></span>
 			<div className="filter-price filter">
-				<h4>In Stack</h4>
+				<h3>In Stack</h3>
 				<label htmlFor="include-outofstock">
 					<input
 						onChange={() => dispatch({ type: "STOCKEDPRODUCTS" })}
@@ -164,7 +169,7 @@ function Drawer({ drawerVisible }) {
 
 			<span className="hr_line-book"></span>
 			<div className="filter-rating filter">
-				<h4>Rating</h4>
+				<h3>Rating</h3>
 				<label htmlFor="rating-4">
 					<input
 						onChange={(e) => dispatch({ type: "RATING", payload: e.target.id })}
@@ -174,7 +179,7 @@ function Drawer({ drawerVisible }) {
 						name="rating"
 						checked={state.rating === "4"}
 					/>
-					4 Stars & above
+					4 ⭐ & above
 				</label>
 				<label htmlFor="rating-3">
 					<input
@@ -185,7 +190,7 @@ function Drawer({ drawerVisible }) {
 						name="rating"
 						checked={state.rating === "3"}
 					/>
-					3 Stars & above
+					3 ⭐ & above
 				</label>
 				<label htmlFor="rating-2">
 					<input
@@ -196,7 +201,7 @@ function Drawer({ drawerVisible }) {
 						name="rating"
 						checked={state.rating === "2"}
 					/>
-					2 Stars & above
+					2 ⭐ & above
 				</label>
 				<label htmlFor="rating-1">
 					<input
@@ -207,7 +212,7 @@ function Drawer({ drawerVisible }) {
 						name="rating"
 						checked={state.rating === "1"}
 					/>
-					1 Stars & above
+					1 ⭐ & above
 				</label>
 			</div>
 		</section>

@@ -14,7 +14,7 @@ function Card({ drawerVisible, setDrawerVisible, search }) {
 	return (
 		<section className="cards_for-book">
 			{filteredProducts.length === 0 && searchedProducts.length === 0 ? (
-				<h3>Products Loading...</h3>
+				<h3>No Product Found...</h3>
 			) : searchedProducts.length === 0 ? (
 				<p className="text-center mt-2 text-lg">No Results Found!</p>
 			) : (

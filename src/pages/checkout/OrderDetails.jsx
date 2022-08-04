@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useAlert } from "react-alert";
-import { useAuth } from "../../Context/auth-context";
 import { useCart } from "../cart/cart-context";
 import "./checkout.css";
 
@@ -8,7 +7,6 @@ function OrderDetails({ selectedAddress }) {
 	const [totalPrice, setTotalPrice] = useState(0);
 	const alert = useAlert();
 	const { cart_state } = useCart();
-	const { authState } = useAuth();
 
 	useEffect(() => {
 		if (cart_state.items.length !== 0) {
@@ -53,13 +51,14 @@ function OrderDetails({ selectedAddress }) {
 
 			const options = {
 				key: "rzp_test_wsMiQbHkdOwiFs",
-				amount: Math.round(totalPrice * 100),
-				currency: "USD",
+				amount: Math.round(totalPrice * 100 * 79.73),
+				currency: "INR",
 				name: "BoOkHuB",
 				description: "Thank you for shopping with us",
 				prefill: {
-					name: `${authState.firstName} ${authState.lastName}`,
-					email: authState.email,
+					name: "Shilpe Saxena",
+					email: "shilpe26@gmail.com",
+					contact: "9140915569",
 				},
 			};
 			const paymentObject = new window.Razorpay(options);
