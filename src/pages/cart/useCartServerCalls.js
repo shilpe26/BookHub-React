@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useCart } from "./cart-context";
 import { useAlert } from "react-alert";
 import axios from "axios";
@@ -8,27 +7,23 @@ function useCartServerCalls() {
 	const { cart_state, cart_dispatch } = useCart();
 	const alert = useAlert();
 
-	useEffect(() => {
-		(async () => {
-			if (token) {
-				try {
-					const response = await axios.get("/api/user/cart", {
-						headers: { authorization: token },
+	const getCart = async () => {
+		if (token) {
+			try {
+				const response = await axios.get("/api/user/cart", {
+					headers: { authorization: token },
+				});
+				if (response.status === 200 && response.data.cart.length !== 0) {
+					cart_dispatch({
+						type: "ADD-TO-CART",
+						payload: response.data.cart,
 					});
-					if (response.status === 200 && response.data.cart.length !== 0) {
-						cart_dispatch({
-							type: "ADD-TO-CART",
-							payload: response.data.cart,
-						});
-					}
-				} catch (error) {
-					alert.show("Internal Server Error", { type: "error" });
 				}
+			} catch (error) {
+				alert.show("Internal Server Error", { type: "error" });
 			}
-		})();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [token]);
-
+		}
+	};
 	const addToCart = async (product, setActivateBtn) => {
 		setActivateBtn(true);
 		try {
@@ -104,7 +99,13 @@ function useCartServerCalls() {
 			setActivateBtn(false);
 		}
 	};
-	return { addToCart, deleteFromCart, increaseQuantity, decreaseQuantity };
+	return {
+		getCart,
+		addToCart,
+		deleteFromCart,
+		increaseQuantity,
+		decreaseQuantity,
+	};
 }
 
 export { useCartServerCalls };

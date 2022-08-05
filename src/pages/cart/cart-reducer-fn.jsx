@@ -17,6 +17,11 @@ export const reducer = (cart_state, action) => {
 				...cart_state,
 				items: [...action.payload],
 			};
+		case "RESET-CART":
+			return {
+				quantity: 0,
+				items: [],
+			};
 		default:
 			return cart_state;
 	}

@@ -1,5 +1,6 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useOrder } from "./orderContext";
+import { useCart } from "../cart/cart-context";
 import "./orderSummary.css";
 
 export const OrderSummary = () => {
@@ -8,6 +9,8 @@ export const OrderSummary = () => {
 		orderState: { orders },
 	} = useOrder();
 	const latestOrder = orders.find((order) => order.orderId === orderId);
+	const { cart_dispatch } = useCart();
+	const navigate = useNavigate();
 
 	return (
 		<div className="page-wrapper">
@@ -33,7 +36,9 @@ export const OrderSummary = () => {
 
 									<div className="order-items">
 										<div className="item-name">Amount Paid:</div>
-										<div className="pl-2">$ {latestOrder?.amount}</div>
+										<div className="pl-2">
+											$ {latestOrder?.amount.toFixed(2)}
+										</div>
 									</div>
 
 									<div className="order-items">
@@ -42,13 +47,6 @@ export const OrderSummary = () => {
                                          ${latestOrder?.delivery.street},
                                           ${latestOrder?.delivery.city} - ${latestOrder.delivery?.zipcode}, 
                                           ${latestOrder?.delivery.state}, ${latestOrder.delivery?.country}`}</div>
-									</div>
-									<div className="buttons empty-cart-btn mt-8">
-										<Link to="/product">
-											<button className="empty-cart-btn">
-												CONTINUE SHOPPING
-											</button>
-										</Link>
 									</div>
 								</div>
 							</div>
@@ -76,7 +74,7 @@ export const OrderSummary = () => {
 													<div className="order-items">
 														<div className="item-name">Price:</div>
 														<div className="placed-price">
-															${latestOrder.amount}
+															${latestOrder.amount.toFixed(2)}
 														</div>
 													</div>
 
@@ -95,11 +93,21 @@ export const OrderSummary = () => {
 				) : (
 					<div className="oops-error text text-md">
 						<p>Oops! We lost your order</p>
-						<Link to="/product" className="text-primary text-xmd">
-							Start shopping!
-						</Link>
 					</div>
 				)}
+				<div className="continue-btn-wrapper buttons mt-8">
+					<button
+						onClick={() => {
+							navigate("/product");
+							cart_dispatch({
+								type: "RESET-CART",
+							});
+						}}
+						className="empty-cart-btn continue-btn"
+					>
+						CONTINUE SHOPPING
+					</button>
+				</div>
 			</section>
 		</div>
 	);

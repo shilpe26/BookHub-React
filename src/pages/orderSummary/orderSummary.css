@@ -51,6 +51,15 @@
   margin: auto;
 }
 
+.continue-btn-wrapper {
+  width: 100%;
+}
+
+button.continue-btn.empty-cart-btn {
+  width: max-content;
+  margin: auto;
+}
+
 .oops-error {
   margin-top: 14rem;
 }
