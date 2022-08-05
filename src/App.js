@@ -9,6 +9,7 @@ import {
 	Login,
 	Signup,
 	Checkout,
+	OrderSummary,
 } from "./pages/Pages";
 import Mockman from "mockman-js";
 import { NotFound } from "./pages/page_not_found/NotFound";
@@ -52,6 +53,7 @@ function App() {
 					/>
 					<Route path="/Product" element={<Product search={search} />} />
 					<Route path="/Product/:productId" element={<ProductDetail />} />
+					<Route path="/order/:orderId" element={<OrderSummary />} />
 					<Route path="/checkout" element={<Checkout />} />
 					<Route
 						path="/wishlist"

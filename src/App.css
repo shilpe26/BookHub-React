@@ -16,6 +16,7 @@
 @import url("./pages/page_not_found/notfound.css");
 @import url("./pages/ProductDetail/productDetail.css");
 @import url("../src/pages/checkout/checkout.css");
+@import url("./pages/orderSummary/orderSummary.css");
 
 .App {
     display: flex;

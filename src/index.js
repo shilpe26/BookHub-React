@@ -9,6 +9,7 @@ import { WhishlistProvider } from "./pages/wishlist/wishlist-context";
 import { CartProvider } from "./pages/cart/cart-context";
 import { AuthProvider } from "./Context/auth-context";
 import { TaskProvider } from "./Context/address-context";
+import { OrderProvider } from "./pages/orderSummary/orderContext";
 import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import { options } from "./Context/alterOptions";
@@ -23,9 +24,11 @@ ReactDOM.render(
 					<CartProvider>
 						<TaskProvider>
 							<AuthProvider>
-								<AlertProvider template={AlertTemplate} {...options}>
-									<App />
-								</AlertProvider>
+								<OrderProvider>
+									<AlertProvider template={AlertTemplate} {...options}>
+										<App />
+									</AlertProvider>
+								</OrderProvider>
 							</AuthProvider>
 						</TaskProvider>
 					</CartProvider>

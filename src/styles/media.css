@@ -207,6 +207,16 @@
         grid-template-columns: 1fr;
         max-width: 90%;
     }
+
+    div.ordered-item-detailing {
+        text-align: center;
+    }
+
+    div.ordered-item-detailing .order-items {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 @media (max-width:450px) {

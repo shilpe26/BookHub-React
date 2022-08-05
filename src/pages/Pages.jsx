@@ -8,3 +8,4 @@ export { NotFound } from "./page_not_found/NotFound";
 export { Checkout } from "./checkout/Checkout";
 export { AddressList } from "./addressList/AddressList";
 export { AddressModal } from "./addressModal/AddressModal";
+export { OrderSummary } from "./orderSummary/OrderSummary";

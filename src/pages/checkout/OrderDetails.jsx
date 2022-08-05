@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useAlert } from "react-alert";
 import { useCart } from "../cart/cart-context";
+import { useOrder } from "../orderSummary/orderContext";
+import { useNavigate } from "react-router-dom";
+import { v4 as uuid } from "uuid";
 import "./checkout.css";
 
 function OrderDetails({ selectedAddress }) {
 	const [totalPrice, setTotalPrice] = useState(0);
 	const alert = useAlert();
 	const { cart_state } = useCart();
+	const navigate = useNavigate();
+	const { dispatchOrder } = useOrder();
 
 	useEffect(() => {
 		if (cart_state.items.length !== 0) {
@@ -55,6 +60,20 @@ function OrderDetails({ selectedAddress }) {
 				currency: "INR",
 				name: "BoOkHuB",
 				description: "Thank you for shopping with us",
+				handler: async function (response) {
+					const orderId = uuid().toString().split("-")[0];
+
+					const orderData = {
+						products: cart_state,
+						amount: totalPrice,
+
+						paymentId: response.razorpay_payment_id,
+						orderId,
+						delivery: selectedAddress,
+					};
+					dispatchOrder({ type: "GET_ORDERS", payload: orderData });
+					navigate(`/order/${orderId}`);
+				},
 				prefill: {
 					name: "Shilpe Saxena",
 					email: "shilpe26@gmail.com",
@@ -110,8 +129,8 @@ function OrderDetails({ selectedAddress }) {
 
 			<div className="title text-smd">Deliver To</div>
 			{selectedAddress && (
-				<div className="order-items-wrapper addr-item">
-					<div className="task-item">
+				<div className="order-items-wrapper">
+					<div>
 						<h3>
 							<span className="text-md">{selectedAddress.name}</span>
 						</h3>
@@ -132,8 +151,10 @@ function OrderDetails({ selectedAddress }) {
 					</div>
 				</div>
 			)}
-
-			<button className="btn btn-primary place-order" onClick={displayRazorpay}>
+			<button
+				className="btn btn-primary place-order text"
+				onClick={displayRazorpay}
+			>
 				Place Order
 			</button>
 		</div>
