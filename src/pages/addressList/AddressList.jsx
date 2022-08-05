@@ -16,28 +16,33 @@ function AddressList({ setShowForm, setIsEditing, setSelectAddress }) {
 
 			<div className="task-list px-8 py-4">
 				{tasks.map((task) => (
-					<div
-						key={task.id}
-						className="task-item cursor"
-						onClick={() => setSelectAddress(task)}
-					>
-						<h3>
-							<span className="text-md">{task.name}</span>
-						</h3>
-						<h3>
-							<span className="text-md">{task.street} </span>
-						</h3>
-						<h3>
-							<span className="text-md">{task.city} - </span>
-							<span className="text-md">{task.zipcode}</span>
-						</h3>
-						<h3>
-							<span className="text-md">{task.state} , </span>
-							<span className="text-md">{task.country}</span>
-						</h3>
-						<h3>
-							<span className="text-md">{task.mobile}</span>
-						</h3>
+					<label key={task.id} className="task-item cursor">
+						<input
+							onClick={() => setSelectAddress(task)}
+							type="radio"
+							name="address-box"
+							aria-label="input-for-address"
+							className="cursor"
+						/>
+						<div className="ml-8">
+							<h3>
+								<span className="text-md">{task.name}</span>
+							</h3>
+							<h3>
+								<span className="text-md">{task.street} </span>
+							</h3>
+							<h3>
+								<span className="text-md">{task.city} - </span>
+								<span className="text-md">{task.zipcode}</span>
+							</h3>
+							<h3>
+								<span className="text-md">{task.state} , </span>
+								<span className="text-md">{task.country}</span>
+							</h3>
+							<h3>
+								<span className="text-md">{task.mobile}</span>
+							</h3>
+						</div>
 						<div className="task-item-btns">
 							<button
 								onClick={() => {
@@ -59,7 +64,7 @@ function AddressList({ setShowForm, setIsEditing, setSelectAddress }) {
 								<i className="p-2 cursor fa-solid fa-trash-can"></i>
 							</button>
 						</div>
-					</div>
+					</label>
 				))}{" "}
 			</div>
 		</div>

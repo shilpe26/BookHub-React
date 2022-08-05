@@ -5,7 +5,7 @@
 .order-summary-container .order-summary-heading {
   margin-top: 12rem;
   text-align: center;
-  color: var(--primary-color);
+  color: var(--primary-gray);
 }
 
 .order-summary-wrapper {
@@ -41,9 +41,7 @@
   gap: 0.75rem;
   margin: 0.5rem 0;
   padding: 0.5rem;
-  border: 1px solid var(--bg-secondary);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  border: 1px solid var(--dark-color);
   cursor: pointer;
 }
 

@@ -43,6 +43,13 @@ export const OrderSummary = () => {
                                           ${latestOrder?.delivery.city} - ${latestOrder.delivery?.zipcode}, 
                                           ${latestOrder?.delivery.state}, ${latestOrder.delivery?.country}`}</div>
 									</div>
+									<div className="buttons empty-cart-btn mt-8">
+										<Link to="/product">
+											<button className="empty-cart-btn">
+												CONTINUE SHOPPING
+											</button>
+										</Link>
+									</div>
 								</div>
 							</div>
 
@@ -53,7 +60,7 @@ export const OrderSummary = () => {
 									</div>
 									<div>
 										{latestOrder?.products.items.map((product) => (
-											<Link to="/cart" className="order-product">
+											<div className="order-product">
 												<img
 													src={product.productImage}
 													alt={product.title}
@@ -78,7 +85,7 @@ export const OrderSummary = () => {
 														<div className="qty-placed">{product.qty}</div>
 													</div>
 												</div>
-											</Link>
+											</div>
 										))}
 									</div>
 								</div>

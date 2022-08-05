@@ -53,13 +53,21 @@ function App() {
 					/>
 					<Route path="/Product" element={<Product search={search} />} />
 					<Route path="/Product/:productId" element={<ProductDetail />} />
-					<Route path="/order/:orderId" element={<OrderSummary />} />
+
 					<Route path="/checkout" element={<Checkout />} />
 					<Route
 						path="/wishlist"
 						element={
 							<RequiresAuth>
 								<Wishlist />
+							</RequiresAuth>
+						}
+					/>
+					<Route
+						path="/order/:orderId"
+						element={
+							<RequiresAuth>
+								<OrderSummary />
 							</RequiresAuth>
 						}
 					/>
