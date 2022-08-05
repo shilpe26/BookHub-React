@@ -46,6 +46,12 @@
 
 .fa-circle-plus {
     background-color: var(--alert-hover);
+    line-height: 3rem;
+    font-size: 2.7rem;
+}
+.fa-circle-plus:hover {
+    box-shadow: var(--white-hover) 0px 19px 43px;
+    transform: translate3d(0px, -1px, 0px);
 }
 
 .fa-pen-to-square {

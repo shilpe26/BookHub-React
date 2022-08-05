@@ -96,6 +96,7 @@ function OrderDetails({ selectedAddress }) {
 							<h2 className="head2">{item.title}</h2>
 							<h4 className="item-head3 ml-4 text-md">Qty: {item.qty}</h4>
 							<h4 className="ml-4 text-md">Price: $ {item.price}</h4>
+							<span className="hr_line-price"></span>
 						</div>
 					</div>
 				))}

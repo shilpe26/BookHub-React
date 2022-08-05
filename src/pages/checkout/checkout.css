@@ -27,7 +27,14 @@
 }
 
 .checkout-container .order-items-wrapper {
-    padding: 2rem;
+    padding: 1rem;
+}
+
+.hr_line-price {
+    display: block;
+    width: 100%;
+    border-top: 1.3px solid var(--light-color);
+    margin: 0rem auto;
 }
 
 .checkout-container .title {

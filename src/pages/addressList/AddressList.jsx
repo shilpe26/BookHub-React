@@ -10,7 +10,7 @@ function AddressList({ setShowForm, setIsEditing, setSelectAddress }) {
 			<div className="task-list-header flex items-center justify-between p-6">
 				<span className="text-xmd ml-8">Add Address</span>
 				<button onClick={() => setShowForm((val) => !val)}>
-					<i className="text-smd cursor fa-solid fa-circle-plus"></i>
+					<i className="cursor fa-solid fa-circle-plus"></i>
 				</button>
 			</div>
 
