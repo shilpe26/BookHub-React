@@ -48,7 +48,7 @@ export const OrderSummary = () => {
 
 							<div>
 								<div>
-									<div className="item-name text-xmd text">
+									<div className="item-name text-smd text">
 										Products Ordered
 									</div>
 									<div>
