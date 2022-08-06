@@ -51,12 +51,18 @@
   margin: auto;
 }
 
-.continue-btn-wrapper {
-  width: 100%;
+div.continue-btn-wrapper {
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-button.continue-btn.empty-cart-btn {
-  width: max-content;
+button.empty-cart-btn {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: auto;
 }
 
