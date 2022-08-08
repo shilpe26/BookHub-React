@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useWishlist } from "./wishlist-context";
 import { Link } from "react-router-dom";
 import { useCartServerCalls } from "../cart/useCartServerCalls";
@@ -8,9 +8,10 @@ function Wishlist() {
 	const { wishlist_state } = useWishlist();
 	const { deleteFromWishlist } = useWishlistServerCalls();
 	const { addToCart } = useCartServerCalls();
+	const [activateBtn, setActivateBtn] = useState(false);
 
 	function cartHandler(item) {
-		addToCart({ ...item });
+		addToCart({ ...item }, setActivateBtn);
 		deleteFromWishlist(item._id);
 	}
 
@@ -68,7 +69,10 @@ function Wishlist() {
 										<h3 className="price-tag">{item.rating}⭐</h3>
 
 										<div className="buttons">
-											<button onClick={() => cartHandler(item)}>
+											<button
+												onClick={() => cartHandler(item)}
+												disabled={activateBtn}
+											>
 												<Link to="/cart">Move to Cart</Link>
 											</button>
 										</div>
