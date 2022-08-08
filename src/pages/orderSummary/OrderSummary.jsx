@@ -74,7 +74,7 @@ export const OrderSummary = () => {
 													<div className="order-items">
 														<div className="item-name">Price:</div>
 														<div className="placed-price">
-															$ {latestOrder.amount.toFixed(2)}
+															$ {product.price}
 														</div>
 													</div>
 
@@ -95,7 +95,7 @@ export const OrderSummary = () => {
 						<p>Oops! We lost your order</p>
 					</div>
 				)}
-				<div className="buttons mt-8">
+				<div className="buttons btn-prodt mt-8">
 					<button
 						onClick={() => {
 							navigate("/product");

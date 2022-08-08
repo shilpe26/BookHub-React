@@ -66,6 +66,14 @@ button.empty-cart-btn {
   margin: auto;
 }
 
+div.btn-prodt {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
 .oops-error {
   margin-top: 14rem;
 }
