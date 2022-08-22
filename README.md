@@ -11,7 +11,7 @@ An E-Commerece Application maded with `React.js` where you can read books of you
 
 #### 🚀Landing Page from where users can go to all other pages
 #### 🚀Landing Page has Category portion which shows diiferent catgories of books, user can visit of their interest
-####🚀Product List Page has filters, user can apply filters of their choice
+#### 🚀Product List Page has filters, user can apply filters of their choice
 #### 🚀User can add products to wishlist or Add to the Cart 
 #### 🚀From wishlist, user can add the Items to the Add to Cart and vice-versa
 #### 🚀Billing Page for total sum of Items 
