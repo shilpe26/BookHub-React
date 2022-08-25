@@ -142,7 +142,7 @@ function Drawer({ drawerVisible }) {
 			</div>
 			<span className="hr_line-book"></span>
 			<div className="filter-price filter">
-				<h3>In Stack</h3>
+				<h3>In Stock</h3>
 				<label htmlFor="include-outofstock">
 					<input
 						onChange={() => dispatch({ type: "STOCKEDPRODUCTS" })}
